@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default</fullName>
+    <fields>Name</fields>
+    <fields>aig_AI_Feature__c</fields>
+    <fields>aig_Description__c</fields>
+    <fields>aig_Optional__c</fields>
+    <label>Default</label>
+</CompactLayout>

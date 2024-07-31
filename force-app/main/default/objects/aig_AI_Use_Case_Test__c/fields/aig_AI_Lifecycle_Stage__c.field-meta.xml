@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_AI_Lifecycle_Stage__c</fullName>
+    <label>AI Lifecycle Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial Feasibility</fullName>
+                <default>false</default>
+                <label>Initial Feasibility</label>
+            </value>
+            <value>
+                <fullName>Data Collection</fullName>
+                <default>false</default>
+                <label>Data Collection</label>
+            </value>
+            <value>
+                <fullName>Data Preprocessing</fullName>
+                <default>false</default>
+                <label>Data Preprocessing</label>
+            </value>
+            <value>
+                <fullName>Model Development</fullName>
+                <default>false</default>
+                <label>Model Development</label>
+            </value>
+            <value>
+                <fullName>Model Training</fullName>
+                <default>false</default>
+                <label>Model Training</label>
+            </value>
+            <value>
+                <fullName>Model Evaluation</fullName>
+                <default>false</default>
+                <label>Model Evaluation</label>
+            </value>
+            <value>
+                <fullName>Deployment</fullName>
+                <default>false</default>
+                <label>Deployment</label>
+            </value>
+            <value>
+                <fullName>Ongoing Monitoring</fullName>
+                <default>false</default>
+                <label>Ongoing Monitoring</label>
+            </value>
+            <value>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+                <label>Retirement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

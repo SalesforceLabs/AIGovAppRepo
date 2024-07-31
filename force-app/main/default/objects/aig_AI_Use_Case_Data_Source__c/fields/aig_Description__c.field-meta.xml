@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Description__c</fullName>
+    <inlineHelpText>Describe the quality of the data and give an order of magnitude.  I.e. each instance of this use case will use around N rows of data</inlineHelpText>
+    <label>Description</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Risk Matrix">
+        <div class="custom-grid-wrapper">
+            <div class="impact-label">Impact ({impact}) →</div>
+            <div class="custom-grid-container">
+                <div class="vertical-label">Likelihood ({likelihood}) →</div>
+                <div>
+                    <div class="custom-grid">
+                        <template for:each={rows} for:item="row">
+                            <div key={row.rowKey} class="custom-row">
+                                <template for:each={row.cells} for:item="cell">
+                                    <div key={cell.cellKey} class={cell.cellClass}>
+                                        {cell.value}
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

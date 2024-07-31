@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Default</fullName>
+    <fields>Name</fields>
+    <fields>aig_AI_Use_Case__c</fields>
+    <fields>aig_Data_Source__c</fields>
+    <label>Default</label>
+</CompactLayout>

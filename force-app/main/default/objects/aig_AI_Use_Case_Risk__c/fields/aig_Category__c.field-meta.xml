@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Content</fullName>
+                <default>false</default>
+                <label>Content</label>
+            </value>
+            <value>
+                <fullName>Data and Information</fullName>
+                <default>false</default>
+                <label>Data and Information</label>
+            </value>
+            <value>
+                <fullName>Human AI Interaction</fullName>
+                <default>false</default>
+                <label>Human AI Interaction</label>
+            </value>
+            <value>
+                <fullName>Dangerous or Violent Recommendations</fullName>
+                <default>false</default>
+                <label>Dangerous or Violent Recommendations</label>
+            </value>
+            <value>
+                <fullName>Emerging Risks</fullName>
+                <default>false</default>
+                <label>Emerging Risks</label>
+            </value>
+            <value>
+                <fullName>Unknown/Other</fullName>
+                <default>false</default>
+                <label>Unknown/Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

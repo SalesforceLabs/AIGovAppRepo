@@ -1,0 +1,89 @@
+.custom-grid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.custom-grid-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.custom-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 0;
+}
+
+.custom-cell {
+    box-sizing: border-box;
+    height: 50px;
+    width: 50px;
+    /*border: 1px solid #d8dde6;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.highlight {
+    /*background-color: #f4f6f9;*/
+    font-weight: bold;
+    /*border-color: black;*/
+    border: var(--lwc-borderWidthThick, 2px) solid black; /* Change color as needed */
+    border-radius: 50%;
+    padding: 10px; /* Adjust padding as needed to properly fit the circle */
+
+}
+
+.highlight-very-low {
+    background-color: #3db14e;
+}
+
+.highlight-low {
+    background-color: #31913a;
+}
+
+.highlight-moderate {
+    background-color: #f8eb17;
+}
+
+.highlight-mod-high {
+    background-color: #f99225;
+}
+
+.highlight-high {
+    background-color: #e41a20;
+}
+
+.highlight-very-high {
+    background-color: #be111a;
+}
+
+.label {
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.impact-label {
+    font-weight: bold;
+    margin-bottom: 10px; /* Adjust this value based on your needs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.vertical-label {
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-right: 10px; /* Adjust this value based on spacing needs */
+    height: 250px; /* Adjust based on the height of the grid */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

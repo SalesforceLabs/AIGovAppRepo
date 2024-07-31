@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Output_Formats__c</fullName>
+    <label>Output Formats</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>aig_File_Formats</valueSetName>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

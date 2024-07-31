@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Record_ID_and_Owner</name>
+        <label>Assign Record ID and Owner and set status</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.aig_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.Cloned_From__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varCurrentUseCase.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.Id</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Cloned_Use_Case</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Check_for_Errors</name>
+        <label>Check for Errors</label>
+        <locationX>182</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Display_Error_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Flow Error</defaultConnectorLabel>
+        <rules>
+            <name>No_Errors</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Create_Cloned_Use_Case</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Success_Message</targetReference>
+            </connector>
+            <label>No Errors</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines whether user moves forward with cloning process</description>
+        <name>Proceed_with_cloning</name>
+        <label>Proceed with cloning?</label>
+        <locationX>380</locationX>
+        <locationY>242</locationY>
+        <defaultConnectorLabel>No do not process</defaultConnectorLabel>
+        <rules>
+            <name>Yes_process_with_cloning</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Are_you_sure_you_want_to_clone_this_use_case</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Current_Use_Case</targetReference>
+            </connector>
+            <label>Yes proceed with cloning</label>
+        </rules>
+    </decisions>
+    <description>This flow is part of the AI Governance Accelerator. It&apos;s purpose is to clone an existing use case using it as a template for a new use case.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>dynamic URL to take user to newly cloned record</description>
+        <name>fRecordURL</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_600}, FIND(&quot;/services&quot;, {!$Api.Partner_Server_URL_600})) &amp; &quot;/lightning/r/aig_AI_Use_Case__c/&quot; &amp; {!varCurrentUseCase.Id}&amp; &quot;/view&quot;</expression>
+    </formulas>
+    <interviewLabel>aig Clone Use Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>aig Clone Use Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Cloned_Use_Case</name>
+        <label>Create Cloned Use Case</label>
+        <locationX>182</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Check_for_Errors</targetReference>
+        </connector>
+        <inputReference>varCurrentUseCase</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Current_Use_Case</name>
+        <label>Get Current Use Case</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Record_ID_and_Owner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>aig_AI_Use_Case__c</object>
+        <outputReference>varCurrentUseCase</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>aig_Overview__c</queriedFields>
+        <queriedFields>aig_App__c</queriedFields>
+        <queriedFields>aig_Description__c</queriedFields>
+        <queriedFields>aig_Objective__c</queriedFields>
+        <queriedFields>aig_Expected_Outcome__c</queriedFields>
+        <queriedFields>aig_Regulatory_Evaluation__c</queriedFields>
+    </recordLookups>
+    <runInMode>DefaultMode</runInMode>
+    <screens>
+        <name>Confirm_Cloning_Screen</name>
+        <label>Confirm Cloning Screen</label>
+        <locationX>380</locationX>
+        <locationY>134</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Proceed_with_cloning</targetReference>
+        </connector>
+        <fields>
+            <name>DisplayCloningExplanation</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Cloning this use case will clone all fields and make you the owner of the cloned use case&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Are_you_sure_you_want_to_clone_this_use_case</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Are you sure you want to clone this use case?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Display_Error_Message</name>
+        <label>Display Error Message</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ErrorMessage</name>
+            <fieldText>&lt;p&gt;This cloning attempt has encountered an error. Please attempt to clone again. If the error persists, reach out to your system adminitrator. &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Message</name>
+        <label>Success Message</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>NavigatetoRecord</name>
+            <fieldText>&lt;p&gt;Use case successfully cloned: &lt;a href=&quot;{!fRecordURL}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Click Here to View&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Confirm_Cloning_Screen</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>ClonedUseCaseName</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;CLONED: {!varCurrentUseCase.Name}&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCurrentUseCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>aig_AI_Use_Case__c</objectType>
+    </variables>
+</Flow>

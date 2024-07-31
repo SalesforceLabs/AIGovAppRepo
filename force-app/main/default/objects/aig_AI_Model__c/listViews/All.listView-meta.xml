@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>aig_Status__c</columns>
+    <columns>aig_Data_Privacy_Risk__c</columns>
+    <columns>aig_Model_Bias_Risk__c</columns>
+    <columns>aig_Regulatory_Compliance_Risk__c</columns>
+    <columns>aig_Training_Data_As_Of__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

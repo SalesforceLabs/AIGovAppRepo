@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_AI_Type__c</fullName>
+    <label>AI Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Generative</fullName>
+                <default>false</default>
+                <label>Generative</label>
+            </value>
+            <value>
+                <fullName>Predictive</fullName>
+                <default>false</default>
+                <label>Predictive</label>
+            </value>
+            <value>
+                <fullName>Automation</fullName>
+                <default>false</default>
+                <label>Automation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

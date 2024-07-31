@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Risk_Addressed__c</fullName>
+    <inlineHelpText>A clear linkage between the test being performed and the specific AI risks it is designed to mitigate. For example, a test evaluating the robustness of an AI model against adversarial examples would be linked to the risk of malicious actors attempting to manipulate the model’s behavior.</inlineHelpText>
+    <label>Risk Addressed</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

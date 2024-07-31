@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Related_Artifacts__c</fullName>
+    <inlineHelpText>A reference to any supporting documentation or evidence generated during the test, such as test scripts, log files, or screenshots. This facilitates transparency and allows for independent verification of test results.</inlineHelpText>
+    <label>Related Artifacts</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

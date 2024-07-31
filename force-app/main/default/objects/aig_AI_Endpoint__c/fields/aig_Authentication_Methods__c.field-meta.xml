@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Authentication_Methods__c</fullName>
+    <label>Authentication Methods</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>API Key</fullName>
+                <default>false</default>
+                <label>API Key</label>
+            </value>
+            <value>
+                <fullName>OAuth 2.0</fullName>
+                <default>false</default>
+                <label>OAuth 2.0</label>
+            </value>
+            <value>
+                <fullName>JWT (JSON Web Token)</fullName>
+                <default>false</default>
+                <label>JWT (JSON Web Token)</label>
+            </value>
+            <value>
+                <fullName>Basic Auth</fullName>
+                <default>false</default>
+                <label>Basic Auth</label>
+            </value>
+            <value>
+                <fullName>Bearer Token</fullName>
+                <default>false</default>
+                <label>Bearer Token</label>
+            </value>
+            <value>
+                <fullName>Client Certificates</fullName>
+                <default>false</default>
+                <label>Client Certificates</label>
+            </value>
+            <value>
+                <fullName>SAML</fullName>
+                <default>false</default>
+                <label>SAML</label>
+            </value>
+            <value>
+                <fullName>OpenID Connect</fullName>
+                <default>false</default>
+                <label>OpenID Connect</label>
+            </value>
+            <value>
+                <fullName>HMAC</fullName>
+                <default>false</default>
+                <label>HMAC</label>
+            </value>
+            <value>
+                <fullName>LDAP</fullName>
+                <default>false</default>
+                <label>LDAP</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

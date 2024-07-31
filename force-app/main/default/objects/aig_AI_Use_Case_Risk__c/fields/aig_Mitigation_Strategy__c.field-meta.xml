@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Mitigation_Strategy__c</fullName>
+    <inlineHelpText>A description of actions or measures that can be taken to reduce the likelihood or impact of the risk. This could include technical controls, policy changes, or user education.</inlineHelpText>
+    <label>Mitigation Strategy</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

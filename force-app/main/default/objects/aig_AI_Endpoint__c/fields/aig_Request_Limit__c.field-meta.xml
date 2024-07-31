@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Request_Limit__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The maximum number of requests that can be made to the AI endpoint within a specified time period.  (e.g. 1000 per minute, 10000 per hour, etc.)</inlineHelpText>
+    <label>Request Limit</label>
+    <length>25</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

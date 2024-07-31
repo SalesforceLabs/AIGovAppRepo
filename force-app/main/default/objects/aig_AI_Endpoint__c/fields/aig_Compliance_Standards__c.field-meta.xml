@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Compliance_Standards__c</fullName>
+    <label>Compliance Standards</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>HIPAA</fullName>
+                <default>false</default>
+                <label>HIPAA</label>
+            </value>
+            <value>
+                <fullName>CCPA</fullName>
+                <default>false</default>
+                <label>CCPA</label>
+            </value>
+            <value>
+                <fullName>ISO/IEC 27001</fullName>
+                <default>false</default>
+                <label>ISO/IEC 27001</label>
+            </value>
+            <value>
+                <fullName>SOC 2</fullName>
+                <default>false</default>
+                <label>SOC 2</label>
+            </value>
+            <value>
+                <fullName>PCI DSS</fullName>
+                <default>false</default>
+                <label>PCI DSS</label>
+            </value>
+            <value>
+                <fullName>FERPA</fullName>
+                <default>false</default>
+                <label>FERPA</label>
+            </value>
+            <value>
+                <fullName>COPPA</fullName>
+                <default>false</default>
+                <label>COPPA</label>
+            </value>
+            <value>
+                <fullName>FISMA</fullName>
+                <default>false</default>
+                <label>FISMA</label>
+            </value>
+            <value>
+                <fullName>NIST</fullName>
+                <default>false</default>
+                <label>NIST</label>
+            </value>
+            <value>
+                <fullName>SOX</fullName>
+                <default>false</default>
+                <label>SOX</label>
+            </value>
+            <value>
+                <fullName>GLBA</fullName>
+                <default>false</default>
+                <label>GLBA</label>
+            </value>
+            <value>
+                <fullName>HITECH</fullName>
+                <default>false</default>
+                <label>HITECH</label>
+            </value>
+            <value>
+                <fullName>ITAR</fullName>
+                <default>false</default>
+                <label>ITAR</label>
+            </value>
+            <value>
+                <fullName>CMMC</fullName>
+                <default>false</default>
+                <label>CMMC</label>
+            </value>
+            <value>
+                <fullName>CSA STAR</fullName>
+                <default>false</default>
+                <label>CSA STAR</label>
+            </value>
+            <value>
+                <fullName>FDA 21 CFR Part 11</fullName>
+                <default>false</default>
+                <label>FDA 21 CFR Part 11</label>
+            </value>
+            <value>
+                <fullName>EU-U.S. Privacy Shield</fullName>
+                <default>false</default>
+                <label>EU-U.S. Privacy Shield</label>
+            </value>
+            <value>
+                <fullName>NYDFS Cybersecurity Regulation</fullName>
+                <default>false</default>
+                <label>NYDFS Cybersecurity Regulation</label>
+            </value>
+            <value>
+                <fullName>BCBS 239</fullName>
+                <default>false</default>
+                <label>BCBS 239</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

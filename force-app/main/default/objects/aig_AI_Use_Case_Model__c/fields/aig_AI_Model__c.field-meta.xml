@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_AI_Model__c</fullName>
+    <label>AI Model</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>aig_AI_Model__c.aig_Status__c</field>
+            <operation>notEqual</operation>
+            <value>⛔ Not Approved for Use</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>aig_AI_Model__c</referenceTo>
+    <relationshipLabel>AI Use Case Model</relationshipLabel>
+    <relationshipName>aig_AI_Use_Case_Model</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

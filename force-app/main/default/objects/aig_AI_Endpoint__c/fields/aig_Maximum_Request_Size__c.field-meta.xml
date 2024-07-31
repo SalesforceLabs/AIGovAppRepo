@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Maximum_Request_Size__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The maximum file size or payload size allowed for each request to the AI endpoint. (e.g. 100KB, 10MB, !GB, etc.)</inlineHelpText>
+    <label>Maximum Request Size</label>
+    <length>25</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

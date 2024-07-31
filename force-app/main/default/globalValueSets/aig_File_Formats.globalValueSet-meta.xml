@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>JSON</fullName>
+        <default>false</default>
+        <label>JSON (JavaScript Object Notation)</label>
+    </customValue>
+    <customValue>
+        <fullName>XML</fullName>
+        <default>false</default>
+        <label>XML (eXtensible Markup Language)</label>
+    </customValue>
+    <customValue>
+        <fullName>CSV</fullName>
+        <default>false</default>
+        <label>CSV (Comma-Separated Values)</label>
+    </customValue>
+    <customValue>
+        <fullName>TSV</fullName>
+        <default>false</default>
+        <label>TSV (Tab-Separated Values)</label>
+    </customValue>
+    <customValue>
+        <fullName>TXT</fullName>
+        <default>false</default>
+        <label>Plain Text (TXT)</label>
+    </customValue>
+    <customValue>
+        <fullName>Binary</fullName>
+        <default>false</default>
+        <label>Binary</label>
+    </customValue>
+    <customValue>
+        <fullName>Image</fullName>
+        <default>false</default>
+        <label>Image Formats (e.g., JPEG, PNG, BMP, TIFF)</label>
+    </customValue>
+    <customValue>
+        <fullName>Audio</fullName>
+        <default>false</default>
+        <label>Audio Formats (e.g., WAV, MP3)</label>
+    </customValue>
+    <customValue>
+        <fullName>Video</fullName>
+        <default>false</default>
+        <label>Video Formats (e.g., MP4, AVI)</label>
+    </customValue>
+    <customValue>
+        <fullName>Protobuf</fullName>
+        <default>false</default>
+        <label>Protobuf (Protocol Buffers)</label>
+    </customValue>
+    <customValue>
+        <fullName>Avro</fullName>
+        <default>false</default>
+        <label>Avro</label>
+    </customValue>
+    <customValue>
+        <fullName>Parquet</fullName>
+        <default>false</default>
+        <label>Parquet</label>
+    </customValue>
+    <customValue>
+        <fullName>Excel</fullName>
+        <default>false</default>
+        <label>Excel (XLS, XLSX)</label>
+    </customValue>
+    <customValue>
+        <fullName>YAML</fullName>
+        <default>false</default>
+        <label>YAML (YAML Ain&apos;t Markup Language)</label>
+    </customValue>
+    <customValue>
+        <fullName>HTML</fullName>
+        <default>false</default>
+        <label>HTML (HyperText Markup Language)</label>
+    </customValue>
+    <customValue>
+        <fullName>HDF5</fullName>
+        <default>false</default>
+        <label>HDF5 (Hierarchical Data Format)</label>
+    </customValue>
+    <customValue>
+        <fullName>NDJSON</fullName>
+        <default>false</default>
+        <label>NDJSON (Newline Delimited JSON)</label>
+    </customValue>
+    <customValue>
+        <fullName>SOAP</fullName>
+        <default>false</default>
+        <label>SOAP (Simple Object Access Protocol) XML</label>
+    </customValue>
+    <masterLabel>File Formats</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

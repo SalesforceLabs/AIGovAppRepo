@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Default</fullName>
+    <fields>aig_Risk__c</fields>
+    <fields>aig_Impact__c</fields>
+    <fields>aig_Likelihood__c</fields>
+    <fields>aig_Risk_Score__c</fields>
+    <fields>aig_Risk_Level__c</fields>
+    <fields>aig_Acceptable_Risk__c</fields>
+    <label>Default</label>
+</CompactLayout>

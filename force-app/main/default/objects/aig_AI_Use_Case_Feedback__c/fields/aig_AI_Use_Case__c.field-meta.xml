@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_AI_Use_Case__c</fullName>
+    <label>AI Use Case</label>
+    <referenceTo>aig_AI_Use_Case__c</referenceTo>
+    <relationshipLabel>Feedback</relationshipLabel>
+    <relationshipName>aig_AI_Use_Case_Feedback</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

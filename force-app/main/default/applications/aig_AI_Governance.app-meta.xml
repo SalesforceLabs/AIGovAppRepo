@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>aig_AI_Model_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>aig_AI_Model__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>aig_AI_Model_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>aig_AI_Model__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AI_Stakeholder_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>aig_AI_Stakeholder__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AI_Stakeholder_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>aig_AI_Stakeholder__c</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#3EA1E0</headerColor>
+        <logo>AI_Governance_Logo</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>Monitor and manage AI projects, ensuring alignment with regulatory and ethical standards while providing performance tracking, risk management, and analytics for transparency and continuous improvement.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>AI Governance</label>
+    <navType>Console</navType>
+    <tabs>aig_Home</tabs>
+    <tabs>aig_AI_Use_Case__c</tabs>
+    <tabs>aig_AI_Application_Implementation__c</tabs>
+    <tabs>aig_AI_Data_Source__c</tabs>
+    <tabs>aig_AI_Model__c</tabs>
+    <tabs>aig_AI_Features__c</tabs>
+    <tabs>aig_AI_Endpoint__c</tabs>
+    <tabs>aig_AI_Stakeholder__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>AI_Governance_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>aig_AI_Application_Implementation__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Data_Source__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Endpoint__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Features__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Model__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Stakeholder__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Use_Case__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_Home</tab>
+        </mappings>
+    </workspaceConfig>
+</CustomApplication>

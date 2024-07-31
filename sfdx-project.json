@@ -1,0 +1,28 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "AI Governance",
+      "versionName": "ver 0.2",
+      "versionNumber": "0.2.0.NEXT",
+      "versionDescription": ""
+    }
+  ],
+  "name": "AI Governance",
+  "namespace": "aigov",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "61.0",
+  "packageAliases": {
+    "AI Governance": "0Hobn0000001oHJCAY",
+    "AI Governance@0.1.0-1": "04tbn000000WbMDAA0",
+    "AI Governance@0.1.0-2": "04tbn000000Ww7JAAS",
+    "AI Governance@0.1.0-3": "04tbn000000Wy13AAC",
+    "AI Governance@0.1.0-4": "04tbn000000WzYDAA0",
+    "AI Governance@0.1.0-5": "04tbn000000X1uzAAC",
+    "AI Governance@0.1.0-6": "04tbn000000X3ojAAC",
+    "AI Governance@0.1.0-7": "04tbn000000X4JNAA0",
+    "AI Governance@0.1.0-8": "04tbn000000X4knAAC",
+    "AI Governance@0.2.0-2": "04tbn000000X5wzAAC"
+  }
+}
