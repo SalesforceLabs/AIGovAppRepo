@@ -296,7 +296,13 @@ fi
 deploy_to_scratch_org() {
   local result
   # Run the sf command and capture its output
-  result=$(sf project deploy start --source-dir "../force-app/main/default" 2>&1)
+  #result=$(sf project deploy start --source-dir "../force-app/main/default" 2>&1)
+  result=$(sf project deploy start 2>&1)
+
+ # Extra
+ echo "////////////////////////////////////////////////////"
+ echo "$result"
+ echo "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
 
   # Search for the word "Error" in the output
   error_count=$(echo "$result" | grep -i "Error" | wc -l)
@@ -335,7 +341,25 @@ if [ $exit_status -ne 0 ]; then
   exit 1
 fi
 
+echo "*******************************************"
+echo "*** Assigning aig_AI_Governance_App_Admin "
+echo "*******************************************"
+assign_perm_set(){
+  sf org assign permset --name aig_AI_Governance_App_Admin --target-org $myScratchOrgName
+}
 
+echo " "
+echo " "
+assign_perm_set & command_pid=$!
+cloud_spinner $command_pid
+wait $command_pid
+exit_status=$?
+# Check the exit status and handle errors
+if [ $exit_status -ne 0 ]; then
+  echo "Deployment failed with exit status $exit_status. Exiting script.💀"
+  printEinsteinError
+  exit 1
+fi
 
 
 echo " "
