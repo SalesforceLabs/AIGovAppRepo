@@ -7,3 +7,7 @@ echo "What is Alias of the org would you like to give to deploy to?"
 read targetOrgName
 
 sf project deploy start --source-dir "../force-app/main/default" --target-org $targetOrgName
+
+sf org assign permset --name aig_AI_Governance_App_Admin --target-org $myScratchOrgName
+
+s
