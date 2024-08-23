@@ -117,7 +117,7 @@ if [ -z "$myScratchOrgName" ]; then
 fi
 echo " "
 echo "*******************************************"
-echo "* Review your choices:"
+echo "Review your choices:"
 echo "*******************************************"
 echo "*** Creating ScratchOrg: $myScratchOrgName"
 echo "*** Salesforce Edition: $mySalesforceEdition"
@@ -174,11 +174,81 @@ cloud_spinner() {
     i=$(( (i + 1) % frame_count ))
     sleep $delay
   done
-  printf "\rDone!       \n"
+  printf "\r       \n"
+}
+
+printEinsteinSuccess(){
+  echo "  "
+  echo "                         &&&&&/                                                "
+  echo "                        ,&&&&&&&&%       .%&&&&&&&.                            "
+  echo "                       %&&&&&&&&&&&&,&&&&&&&&&&&&&&&                           "
+  echo "                     *&&&&&&(((#&&&&&&&&&&&#(((#&&&&%                          "
+  echo "                    #&&&&&(((((((&&&&&#(((((((((&&&&&                          "
+  echo "              *#%&&&&&&&&(((((((((((((((((((((((&&&&&&&&&&&&&&*                "
+  echo "        ,&&&&&&&&&&&&&&&%(((((((((((((((((((((((&&&&&&&&&&&&&&&&&&&&%/         "
+  echo "       &&&&&&&&%#(((#&&#(((((((((((((((((((((((((((((((((((((&&&&&&&&&&        "
+  echo "        #&&&&&&(((((((((((((((((((((((((((((((((((((((((((((((#&&&&&&(         "
+  echo "      %&&&&&&&&(((((((((((((((((((((%&&%#((((((((((((((((((((((&&&&&&&&*       "
+  echo "   *&&&&&&&%(((((((((((((((((((((((&&&&&&&&&&&#(((((((((((((((((((#&&&&&&      "
+  echo "  &&&&&&(((((((((((((((((&&&&&&&&#(&&&&&&&&&&&&&&&#(((((((((((((((((#&&&&&     "
+  echo " &&&&&&&&&#(((((((((((%&&&&&&&&&&&&&&&&&&%  .&&&&&&&&#&&&&((((((&&&&&&&&&&.    "
+  echo "  #%%&&&&&%(((((((((#&&&&&&     #&&&&&&&&&.     *&&&&&&&&&&&(((&&&&&&&,  ./&@, "
+  echo "      &&&&&#(((((((&&&&&&                          &&&&&&&&&&(((&&&&&&&&&&&&&&("
+  echo "       &&&&&&&((((&&&&&%    .@&&&&&          @&&&&&@    %&&&&&((((#&&&&&&&&&&&&"
+  echo "&&&&&&&&&&&&&&&(((&&&&&    &&&&%/&*          &&&/&&&&#   &&&&&#(((((((((((&&&&&"
+  echo "&&&&&&&&&&&&(((((&&&&&*     ,   @&             @@         &&&&&((((((((((&&&&& "
+  echo " &&&&&&((((((((((&&&&&.       .&&&@           &&&&        @&&&&(((((((#&&&&&&, "
+  echo "  (&&&&&&#(((((((&&&&&/        /&&             &&,        @&&&&((%&&&&&&&&&/   "
+  echo "    &&&&&&&&&&#(((&&&&&            .@&     &%             &&&&&((%&&&&&#       "
+  echo "        /&&&&&((((&&&&&#       &&&&&&&&&&&&&&&&&&#       &&&&&%(((#&&&&&&      "
+  echo "       .&&&&&&&&&&&&&&&&&    #&&&&&&&&&&&&&&&&&&&&&(    &&&&&&&&&&&&&&&&,      "
+  echo "        *&&&&&&&&&&&&&&&&&&   @&&@#,        .,#@&&#   &&&&&&&&&&&&&&(          "
+  echo "             .,,,     %&&&&&&&#                   %&&&&&&&#                    "
+  echo "                         &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&%                       "
+  echo "                             /@&&&&&&&&&&&&&&&&&&&@*                           "
+  echo "                                                                               "
+}
+
+printEinsteinError(){
+  echo "  "
+  echo "                         &&&&&/                &&&&                               "
+  echo "                        ,&&&&&&&&%           .%&&&&&&&.                           "
+  echo "     &&                %&&&&&&&&&&&&,     &&&&&&&&&&&&&&&              &&         "
+  echo "      &&&            *&&&&&&(((#&&&&&&&&&&&#(((#&&&&&&&&%            &&&          "
+  echo "       &&&&         #&&&&&(((((((&&&&&#(((((((((&&&&&               &&&&          "
+  echo "        &&&&  *#%&&&&&&&&(((((((((((((((((((((((&&&&&&&&&&&&&&*   &&&&&           "
+  echo "        ,&&&&&&&&&&&&&&&%(((((((((((((((((((((((&&&&&&&&&&&&&&&&&&&&%/            "
+  echo " &&&   &&&&&&&&%#(((#&&#(((((( E R R O R ((((((((((((((((((((&&&&&&&&&&           "
+  echo "   &&&  #&&&&&&(((((((((((((((((((((((((((((((((((((((((((((((#&&&&&&(     &&&    "
+  echo "      %&&&&&&&&(((((((((((((((((((((%&&%#((((((((((((((((((((((&&&&&&&&*  &&&     "
+  echo "   *&&&&&&&%(((((((((((((((((((((((&&&&&&&&&&&#(((((((((((((((((((#&&&&&&&&       "
+  echo "  &&&&&&(((((((((((((((((&&&&&&&&#(&&&&&&&&&&&&&&&#(((((((((((((((((#&&&&&        "
+  echo " &&&&&&&&&#(((((((((((%&&&&&&&&&&&&&&&&&&%   .&&&&&&&&#&&&&((((((&&&&&&&&&&.      "
+  echo "  #%%&&&&&%(((((((((#&&&&&&     #&&&&&&&&&.      *&&&&&&&&&&&(((&&&&&&&,  ./&@,   "
+  echo "      &&&&&#(((((((&&&&&&                            &&&&&&&&&&(((&&&&&&&&&&&&&&( "
+  echo "       &&&&&&&((((&&&&&%     *~~~*           *~~~*     %&&&&&((((#&&&&&&&&&&&&    "
+  echo "&&&&&&&&&&&&&&&(((&&&&&   #&VVVV*            &&VVVV*    &&&&&#(((((((((((&&&&&    "
+  echo "&&&&&&&&&&&&(((((&&&&&*     -----             -----       &&&&&((((((((((&&&&&    "
+  echo " &&&&&&((((((((((&&&&&.      \ */              \ */        @&&&&(((((((#&&&&&&,   "
+  echo "  (&&&&&&#(((((((&&&&&/        /&&             &&,        @&&&&((%&&&&&&&&&/      "
+  echo "    &&&&&&&&&&#(((&&&&&             .@&   &%              &&&&&((%&&&&&#          "
+  echo "        /&&&&&((((&&&&&#       &&&&&&&&&&&&&&&&&&#       &&&&&%(((#&&&&&&         "
+  echo "       .&&&&&&&&&&&&&&&&&    #&&&&&&   __    &&&&&&&(    &&&&&&&&&&&&&&&&,        "
+  echo "        *&&&&&&&&&&&&&&&&&&   @&&@#,  (  )   .,#@&&#   &&&&&&&&&&&&&&(            "
+  echo "        *&&&&&&&&&&&&&&&&&&   @&&@#, ((  ))  .,#@&&#   &&&&&&&&&&&&&&(            "
+  echo "           .,,, %&&&&&&&&&&#          \WW/         %&&&&&&&#                      "
+  echo "                         &&&&&&&&&&&&&&VV&&&&&&&&&&&&&&%                          "
+  echo "                             /@&&&&&&&&&&&&&&&&&&&@*                              "
+  echo "                                  &&&&&&&&&&&&&                                   "
+  echo "                                     &&&&&&&                                      "
+  echo " "
+  echo "                                    E R R O R                                     "
 }
 
 # ============
+echo "*******************************************"
 echo "*** Creating Scratch Org"
+echo "*******************************************"
 echo " "
 echo " "
 create_scratch_org() {
@@ -188,10 +258,11 @@ create_scratch_org() {
   result=$(sf org create scratch --edition $mySalesforceEdition --definition-file ../config/project-scratch-def.json --no-namespace --alias $myScratchOrgName --duration-days 30 --set-default --json 2>&1)
 
   # Search for the word "Error" in the output
-  error_count=$(echo "$result" | grep -i "Error" | wc -l)
+  error_count=$(echo "$result" | grep -i "Error:" | wc -l)
 
   # Check for "Error" in the result
-  if echo "$result" | grep -q "Error"; then
+  if echo "$result" | grep -q '"errorCode":"[^\"]"'; then
+    echo ""
     echo "Error occurred during org creation."
 
     # Display the number of errors
@@ -200,18 +271,26 @@ create_scratch_org() {
       break
     fi
     echo "$result"  # Print the detailed error message
-    exit 1
+    return 1
   fi
   
-  echo "*******"
+  echo "*******************************************"
   echo "*** Scratch Org Created"
   echo "*** Org Alias: $myScratchOrgName"
-  echo "*******"
+  echo "*******************************************"
   
 
 }
 create_scratch_org & command_pid=$!
 cloud_spinner $command_pid
+wait $command_pid
+exit_status=$?
+# Check the exit status and handle errors
+if [ $exit_status -ne 0 ]; then
+  echo "Scratch Creation failed with exit status $exit_status. Exiting script."
+  printEinsteinError
+  exit 1
+fi
 
 
 deploy_to_scratch_org() {
@@ -232,11 +311,31 @@ deploy_to_scratch_org() {
       break
     fi
     echo "$result"  # Print the detailed error message
-    exit 1
+    return 1
   fi
   
   echo "Deployment completed."
 }
+
+
+
+echo "*******************************************"
+echo "*** Deploying to $myScratchOrgName Scratch Org"
+echo "*******************************************"
+echo " "
+echo " "
+deploy_to_scratch_org & command_pid=$!
+cloud_spinner $command_pid
+wait $command_pid
+exit_status=$?
+# Check the exit status and handle errors
+if [ $exit_status -ne 0 ]; then
+  echo "Deployment failed with exit status $exit_status. Exiting script.💀"
+  printEinsteinError
+  exit 1
+fi
+
+
 
 
 echo " "
@@ -248,9 +347,10 @@ echo " "
 echo "*** Opening Org"
 sf org open
 echo "*******"
-echo "*******************************************"
-echo "* Well done! Enjoy the AI Governance App   "
-echo "*******************************************"
+echo "*******************************************************************************"
+echo "                      Well done! Enjoy the AI Governance App   "
+printEinsteinSuccess
+echo "*******************************************************************************"
 echo " "
 echo " "
 echo " "
