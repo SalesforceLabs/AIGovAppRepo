@@ -5,16 +5,16 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
+        <!-- <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <valueList>
                         <valueListItems>
-                            <value>aig_AI_Use_Case__c</value>
+                            <value>aigov__aig_AI_Use_Case__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>aig_AI_Application_Implementation__c</value>
+                            <value>aigov__aig_AI_Application_Implementation__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -25,7 +25,7 @@
                 <componentName>runtime_mobilesapp:launchPadTileList</componentName>
                 <identifier>runtime_mobilesapp_launchPadTileList</identifier>
             </componentInstance>
-        </itemInstances>
+        </itemInstances> -->
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -54,25 +54,25 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
+        <!-- <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <valueList>
                         <valueListItems>
-                            <value>aig_AI_Model__c</value>
+                            <value>aigov__aig_AI_Model__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>aig_AI_Data_Source__c</value>
+                            <value>aigov__aig_AI_Data_Source__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>aig_AI_Endpoint__c</value>
+                            <value>aigov__aig_AI_Endpoint__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>aig_AI_Features__c</value>
+                            <value>aigov__aig_AI_Features__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>aig_AI_Stakeholder__c</value>
+                            <value>aigov__aig_AI_Stakeholder__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -83,7 +83,7 @@
                 <componentName>runtime_mobilesapp:launchPadTileList</componentName>
                 <identifier>runtime_mobilesapp_launchPadTileList2</identifier>
             </componentInstance>
-        </itemInstances>
+        </itemInstances> -->
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
