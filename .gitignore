@@ -44,5 +44,6 @@ $RECYCLE.BIN/
 **/.venv/
 **/venv/
 
-#Local notes
+#Local files
 localNotes.txt
+.vscode/
