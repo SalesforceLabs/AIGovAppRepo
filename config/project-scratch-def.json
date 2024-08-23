@@ -1,8 +1,8 @@
 {
-  "orgName": "bryan.wise company",
+  "orgName": "Your Company",
   "edition": "Partner Developer",
   "namespace": "aigov",
-  "features": ["EnableSetPasswordInApi","EINSTEIN1AIPLATFORM"],
+  "features": ["EnableSetPasswordInApi"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
