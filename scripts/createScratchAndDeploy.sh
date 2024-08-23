@@ -112,8 +112,11 @@ echo " "
 echo "Or press [Eneter] for Default value 'AiGovApp_Feature1'"
 echo " "
 read myScratchOrgName
-if [ -z "$myScratchOrgName" ]; then
-  myScratchOrgName="AiGovApp_Feature1"
+if [ -z "$myScratchOrgName" ]; 
+  then
+    myScratchOrgName="AiGovApp_Feature1"
+  else
+    echo "The variable is not empty: $myScratchOrgName"
 fi
 echo " "
 echo "*******************************************"
@@ -257,10 +260,20 @@ create_scratch_org() {
   # Run the sf command and capture its output
   result=$(sf org create scratch --edition $mySalesforceEdition --definition-file ../config/project-scratch-def.json --no-namespace --alias $myScratchOrgName --duration-days 30 --set-default --json 2>&1)
 
+  echo ""
+  echo "$result"  # Print the detailed error message
+  echo ""
+
   # Search for the word "Error" in the output
   error_count=$(echo "$result" | grep -i "Error:" | wc -l)
 
   # Check for "Error" in the result
+  if echo "$result" | grep -q 'LIMIT_EXCEEDED'; then
+    # Handle the error
+    echo "Error: Limit exceeded."
+    return 1
+  fi
+
   if echo "$result" | grep -q '"errorCode":"[^\"]"'; then
     echo ""
     echo "Error occurred during org creation."
@@ -270,7 +283,9 @@ create_scratch_org() {
       echo "Number of errors: $error_count"
       break
     fi
+    echo "±±±±±±±±±±±±±±±±"
     echo "$result"  # Print the detailed error message
+    echo "±±±±±±±±±±±±±±±±"
     return 1
   fi
   
@@ -279,7 +294,6 @@ create_scratch_org() {
   echo "*** Org Alias: $myScratchOrgName"
   echo "*******************************************"
   
-
 }
 create_scratch_org & command_pid=$!
 cloud_spinner $command_pid
@@ -297,7 +311,7 @@ deploy_to_scratch_org() {
   local result
   # Run the sf command and capture its output
   #result=$(sf project deploy start --source-dir "../force-app/main/default" 2>&1)
-  result=$(sf project deploy start 2>&1)
+  result=$(sf project deploy start --source-dir ../force-app --target-org $myScratchOrgName 2>&1)
 
  # Extra
  echo "////////////////////////////////////////////////////"
@@ -336,7 +350,7 @@ wait $command_pid
 exit_status=$?
 # Check the exit status and handle errors
 if [ $exit_status -ne 0 ]; then
-  echo "Deployment failed with exit status $exit_status. Exiting script.💀"
+  echo "Deployment failed with exit status $exit_status. Exiting script."
   printEinsteinError
   exit 1
 fi
@@ -361,13 +375,9 @@ if [ $exit_status -ne 0 ]; then
   exit 1
 fi
 
-
 echo " "
 echo " "
 
-# echo "*** Deploying Source"
-# sf project deploy start --source-dir "../force-app/main/default"
-# echo "*******"
 echo "*** Opening Org"
 sf org open
 echo "*******"
