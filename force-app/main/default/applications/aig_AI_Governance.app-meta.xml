@@ -54,6 +54,7 @@
     <tabs>aig_Home</tabs>
     <tabs>aig_AI_Use_Case__c</tabs>
     <tabs>aig_AI_Application_Implementation__c</tabs>
+    <tabs>aig_AI_Risk_Packet__c</tabs>
     <tabs>aig_AI_Data_Source__c</tabs>
     <tabs>aig_AI_Model__c</tabs>
     <tabs>aig_AI_Features__c</tabs>
@@ -76,6 +77,9 @@
         </mappings>
         <mappings>
             <tab>aig_AI_Model__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Risk_Packet__c</tab>
         </mappings>
         <mappings>
             <tab>aig_AI_Stakeholder__c</tab>

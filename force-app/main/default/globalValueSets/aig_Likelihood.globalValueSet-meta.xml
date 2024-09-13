@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Very Unlikely</fullName>
+        <default>false</default>
+        <label>🟩 Very Unlikely</label>
+    </customValue>
+    <customValue>
+        <fullName>Unlikely</fullName>
+        <default>false</default>
+        <label>🟨 Unlikely</label>
+    </customValue>
+    <customValue>
+        <fullName>Possible</fullName>
+        <default>false</default>
+        <label>🟧 Possible</label>
+    </customValue>
+    <customValue>
+        <fullName>Likely</fullName>
+        <default>false</default>
+        <label>🟥 Likely</label>
+    </customValue>
+    <customValue>
+        <fullName>Very Likely</fullName>
+        <default>false</default>
+        <label>⬛️ Very Likely</label>
+    </customValue>
+    <masterLabel>Likelihood</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

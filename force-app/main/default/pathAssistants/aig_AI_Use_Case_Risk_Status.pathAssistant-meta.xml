@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>aig_AI_Use_Case_Risk__c</entityName>
+    <fieldName>aig_Status__c</fieldName>
+    <masterLabel>AI Use Case Risk Status</masterLabel>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

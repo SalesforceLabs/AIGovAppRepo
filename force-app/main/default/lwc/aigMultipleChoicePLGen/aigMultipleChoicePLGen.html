@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Risk Packet Question/Response" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <div class="slds-m-around_medium">
+                <p class="slds-text-heading_medium slds-text-color_default slds-m-bottom_medium">
+                    <strong>{riskValue}</strong>
+                </p>
+            
+                <!-- Response or Option Field -->
+                <template if:true={isMultipleChoice}>
+                    <lightning-combobox 
+                        label="Select an Option"
+                        placeholder="Select an option"
+                        options={options}
+                        value={value}
+                        onchange={handlePicklistChange}>
+                    </lightning-combobox>
+                </template>
+
+                <!-- If there are no options, show a text area and message -->
+                <template if:false={isMultipleChoice}>
+                    <lightning-textarea
+                        label="Response"
+                        placeholder=" "
+                        maxlength="254"
+                        value={value}
+                        onblur={handleTextBlur}> <!-- Trigger save on blur -->
+                    </lightning-textarea>
+                </template>
+
+                <!-- Show message if it's a multiple choice question without options -->
+                <template if:true={showTextBoxMessage}>
+                    <div class="slds-m-top_medium">
+                        <lightning-formatted-text value="This question was identified as a multiple choice question, but has not been configured with choices. You may provide a text response." class="slds-text-color_error"></lightning-formatted-text>
+                    </div>
+                </template>
+                <br/>
+                <p class="slds-text-body_small slds-text-color_default">
+                    Decision Maker/Stakeholder Assigned: <strong>{stakeholder}</strong>
+                </p>
+                
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <template if:true={error}>
+            <div class="slds-m-around_medium">
+                <p class="slds-text-color_error">Error: {error}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

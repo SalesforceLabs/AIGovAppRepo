@@ -130,7 +130,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>aig_AI_Use_Case_Stakeholder_Record_Page</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -138,7 +138,7 @@
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>aig_AI_Use_Case_Stakeholder_Record_Page</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
     </actionOverrides>
@@ -167,6 +167,7 @@
     </nameField>
     <pluralLabel>AI Use Case Stakeholders</pluralLabel>
     <searchLayouts>
+        <searchResultsAdditionalFields>aig_Stakeholder_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>aig_Role__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>

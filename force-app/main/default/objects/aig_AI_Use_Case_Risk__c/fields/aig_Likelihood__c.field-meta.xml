@@ -12,26 +12,31 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Very Unlikely</fullName>
+                <color>#009900</color>
                 <default>false</default>
                 <label>🟩 Very Unlikely</label>
             </value>
             <value>
                 <fullName>Unlikely</fullName>
+                <color>#FFCC33</color>
                 <default>false</default>
                 <label>🟨 Unlikely</label>
             </value>
             <value>
                 <fullName>Possible</fullName>
+                <color>#FF9900</color>
                 <default>false</default>
                 <label>🟧 Possible</label>
             </value>
             <value>
                 <fullName>Likely</fullName>
+                <color>#CC0000</color>
                 <default>false</default>
                 <label>🟥 Likely</label>
             </value>
             <value>
                 <fullName>Very Likely</fullName>
+                <color>#000000</color>
                 <default>false</default>
                 <label>⬛️ Very Likely</label>
             </value>

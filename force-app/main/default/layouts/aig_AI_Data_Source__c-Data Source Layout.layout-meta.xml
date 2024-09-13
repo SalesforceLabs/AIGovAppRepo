@@ -43,6 +43,10 @@
                 <behavior>Edit</behavior>
                 <field>aig_Data_Source_Owner__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>aig_Organization_Owner__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

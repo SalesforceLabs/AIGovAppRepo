@@ -19,6 +19,10 @@
                 <behavior>Required</behavior>
                 <field>aig_AI_Stakeholder__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>aig_Stakeholder_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Impact_Assessment_Category__c</fullName>
+    <label>Impact Assessment Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rights-Impacting</fullName>
+                <default>false</default>
+                <label>Rights-Impacting</label>
+            </value>
+            <value>
+                <fullName>Safety Impacting</fullName>
+                <default>false</default>
+                <label>Safety Impacting</label>
+            </value>
+            <value>
+                <fullName>Both</fullName>
+                <default>false</default>
+                <label>Both</label>
+            </value>
+            <value>
+                <fullName>Neither</fullName>
+                <default>false</default>
+                <label>Neither</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

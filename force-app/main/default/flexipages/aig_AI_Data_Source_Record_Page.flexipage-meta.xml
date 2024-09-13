@@ -109,6 +109,12 @@
                 <identifier>Recordaigov__aig_Data_Source_Owner__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.aig_Organization_Owner__c</fieldItem>
+                <identifier>Recordaigov__aig_Organization_Owner__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-5b834cf9-b763-4e57-a851-cfcd38f4eb0a</name>
         <type>Facet</type>
     </flexiPageRegions>

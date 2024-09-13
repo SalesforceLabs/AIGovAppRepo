@@ -51,6 +51,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Data_Source__c.aig_Organization_Owner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Data_Source__c.aig_Origin__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -141,6 +146,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Model__c.aig_External_Risk_Scorecard_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Model__c.aig_Model_Bias_Risk__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -176,7 +186,47 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Model__c.aig_Training_Data_As_Of__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Model__c.aig_Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Risk_Packet_Question_Resp_Choice__c.aig_Impact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Risk_Packet_Question_Resp_Choice__c.aig_Likelihood__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Risk_Packet_Question__c.aig_Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Risk_Packet_Question__c.aig_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Risk_Packet_Question__c.aig_Default_Decision_Maker__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Risk_Packet__c.aig_Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>aig_AI_Risk_Packet__c.aig_Num_of_Active_Questions__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -251,6 +301,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Use_Case_Risk__c.aig_AI_Risk_Packet_Question__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Acceptable_Risk__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -267,6 +322,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>aig_AI_Use_Case_Risk__c.aig_From_Risk_Packet__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -287,6 +347,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Risk_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case_Risk__c.aig_Risk_Packet_Question_Response__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -317,6 +382,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Use_Case_Stakeholder__c.aig_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>aig_AI_Use_Case_Stakeholder__c.aig_Stakeholder_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -386,7 +456,47 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Use_Case__c.Private_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_AI_System_Output__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Acquisition_Development_Began_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Use_Case__c.aig_App__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Contact_Email_Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Date_Implemented__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Date_Initiated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Date_Retired__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -401,6 +511,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Impact_Assessment_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Implementation_Source__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>aig_AI_Use_Case__c.aig_Num_of_Stakeholder__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Use_Case__c.aig_Objective__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -411,7 +536,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Private__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Use_Case__c.aig_Regulatory_Evaluation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Stage_of_Development__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -419,10 +554,15 @@
         <field>aig_AI_Use_Case__c.aig_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Sub_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>AI Governance App Admin</label>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
+        <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
@@ -467,7 +607,34 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Risk_Packet_Question_Resp_Choice__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Risk_Packet_Question__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Risk_Packet__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
@@ -535,6 +702,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Use_Case_Stakeholder__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>aig_AI_Use_Case_Test__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -565,6 +741,10 @@
     </tabSettings>
     <tabSettings>
         <tab>aig_AI_Model__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>aig_AI_Risk_Packet__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
