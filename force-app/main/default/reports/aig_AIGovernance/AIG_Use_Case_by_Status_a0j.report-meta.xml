@@ -9,7 +9,6 @@
     <columns>
         <field>FK_NAME</field>
     </columns>
-    <currency>USD</currency>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>

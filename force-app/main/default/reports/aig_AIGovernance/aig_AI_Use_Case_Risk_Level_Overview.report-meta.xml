@@ -37,7 +37,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>aig_AI_Use_Case_Risk__c.aig_Risk_Score__c</field>
     </columns>
-    <currency>USD</currency>
     <filter>
         <criteriaItems>
             <column>CUST_ID</column>
