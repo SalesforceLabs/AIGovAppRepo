@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Content</fullName>
+        <default>false</default>
+        <label>Content</label>
+    </customValue>
+    <customValue>
+        <fullName>Data and Information</fullName>
+        <default>false</default>
+        <label>Data and Information</label>
+    </customValue>
+    <customValue>
+        <fullName>Human AI Interaction</fullName>
+        <default>false</default>
+        <label>Human AI Interaction</label>
+    </customValue>
+    <customValue>
+        <fullName>Dangerous or Violent Recommendations</fullName>
+        <default>false</default>
+        <label>Dangerous or Violent Recommendations</label>
+    </customValue>
+    <customValue>
+        <fullName>Emerging Risks</fullName>
+        <default>false</default>
+        <label>Emerging Risks</label>
+    </customValue>
+    <customValue>
+        <fullName>Unknown/Other</fullName>
+        <default>false</default>
+        <label>Unknown/Other</label>
+    </customValue>
+    <masterLabel>Risk Categories</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
