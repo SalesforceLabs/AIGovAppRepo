@@ -167,7 +167,6 @@
     </nameField>
     <pluralLabel>AI Use Case Stakeholders</pluralLabel>
     <searchLayouts>
-        <searchResultsAdditionalFields>aig_Stakeholder_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>aig_Role__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>

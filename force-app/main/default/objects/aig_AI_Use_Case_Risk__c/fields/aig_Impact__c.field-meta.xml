@@ -8,38 +8,6 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>Very Low</fullName>
-                <color>#33CC00</color>
-                <default>false</default>
-                <label>🟢 Very Low Impact</label>
-            </value>
-            <value>
-                <fullName>Low</fullName>
-                <color>#FFCC33</color>
-                <default>false</default>
-                <label>🟡 Low</label>
-            </value>
-            <value>
-                <fullName>Moderate</fullName>
-                <color>#FF9900</color>
-                <default>false</default>
-                <label>🟠 Moderate</label>
-            </value>
-            <value>
-                <fullName>High</fullName>
-                <color>#CC0000</color>
-                <default>false</default>
-                <label>🔴 High</label>
-            </value>
-            <value>
-                <fullName>Very High</fullName>
-                <color>#000000</color>
-                <default>false</default>
-                <label>⚫ Very High</label>
-            </value>
-        </valueSetDefinition>
+        <valueSetName>aig_Impact</valueSetName>
     </valueSet>
 </CustomField>
