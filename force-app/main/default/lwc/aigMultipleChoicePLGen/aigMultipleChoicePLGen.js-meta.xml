@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <!-- Input property to accept recordId when used in flow -->
+            <property name="flowRecordId" type="String" label="Record Id"/>
+            <!-- Output properties for individual fields -->
+            <property name="responseLabel" type="String" label="Response" role="outputOnly"/>
+            <property name="impact" type="String" label="Impact" role="outputOnly"/>
+            <property name="likelihood" type="String" label="Likelihood" role="outputOnly"/>
+        </targetConfig>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>aigov__aig_AI_Use_Case_Risk__c</object>
+            </objects>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

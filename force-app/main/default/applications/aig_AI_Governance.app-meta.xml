@@ -59,11 +59,15 @@
     <tabs>aig_AI_Features__c</tabs>
     <tabs>aig_AI_Endpoint__c</tabs>
     <tabs>aig_AI_Stakeholder__c</tabs>
+    <tabs>aig_AI_Compliance_Checklist__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>AI_Governance_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>aig_AI_Application_Implementation__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Compliance_Checklist__c</tab>
         </mappings>
         <mappings>
             <tab>aig_AI_Data_Source__c</tab>

@@ -8,6 +8,38 @@
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
-        <valueSetName>aig_Risk_Categories</valueSetName>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Content</fullName>
+                <default>false</default>
+                <label>Content</label>
+            </value>
+            <value>
+                <fullName>Data and Information</fullName>
+                <default>false</default>
+                <label>Data and Information</label>
+            </value>
+            <value>
+                <fullName>Human AI Interaction</fullName>
+                <default>false</default>
+                <label>Human AI Interaction</label>
+            </value>
+            <value>
+                <fullName>Dangerous or Violent Recommendations</fullName>
+                <default>false</default>
+                <label>Dangerous or Violent Recommendations</label>
+            </value>
+            <value>
+                <fullName>Emerging Risks</fullName>
+                <default>false</default>
+                <label>Emerging Risks</label>
+            </value>
+            <value>
+                <fullName>Unknown/Other</fullName>
+                <default>false</default>
+                <label>Unknown/Other</label>
+            </value>
+        </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -145,14 +145,14 @@
         <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <fields>
             <name>displayTestCaseCreatedMessage</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(89, 176, 143);&quot;&gt;Success!&lt;/strong&gt;&lt;strong style=&quot;color: rgb(2, 2, 2);&quot;&gt; &lt;/strong&gt;&lt;a href=&quot;{!fCreateDynamicLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(2, 2, 2);&quot;&gt;&lt;strong&gt;Test Case # {!varNewTestCaseNumber} &lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;color: rgb(2, 2, 2);&quot;&gt;has been created&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(89, 176, 143);&quot;&gt;Success!&lt;/strong&gt;&lt;strong style=&quot;color: rgb(2, 2, 2);&quot;&gt; &lt;/strong&gt;&lt;a href=&quot;{!fCreateDynamicLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(2, 2, 2);&quot;&gt;&lt;strong&gt;Test Case # {!varNewTestCaseNumber} &lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;color: rgb(2, 2, 2);&quot;&gt;has been created&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Test_Case</name>
@@ -161,7 +161,7 @@
         <locationY>350</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Assign_Rich_Text_Values</targetReference>
         </connector>

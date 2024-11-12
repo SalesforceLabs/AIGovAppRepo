@@ -41,6 +41,20 @@
                 <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>hideUpdateButton</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>linear</value>
+                </componentInstanceProperties>
+                <componentName>runtime_sales_pathassistant:pathAssistant</componentName>
+                <identifier>runtime_sales_pathassistant_pathAssistant</identifier>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>
@@ -73,20 +87,17 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Name</fieldItem>
-                <identifier>RecordNameField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.aig_Risk_Level__c</fieldItem>
-                <identifier>Recordaig_Risk_Level_cField</identifier>
+                <fieldItem>Record.aig_Risk__c</fieldItem>
+                <identifier>Recordaig_Risk_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.aig_From_Compliance_Checklist__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -105,18 +116,36 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.aig_Category__c</fieldItem>
-                <identifier>Recordaig_Category_cField</identifier>
+                <fieldItem>Record.aig_Mitigation_Strategy__c</fieldItem>
+                <identifier>Recordaigov_aig_Mitigation_Strategy_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-8031677f-53d8-4c7c-95fb-a1f6b3a0117f</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-8031677f-53d8-4c7c-95fb-a1f6b3a0117f</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-40e217db-5fd6-4d75-be2a-ce8b17d9fe28</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>required</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.aig_AI_Use_Case__c</fieldItem>
-                <identifier>Recordaig_AI_Use_Case_cField</identifier>
+                <fieldItem>Record.aig_Impact__c</fieldItem>
+                <identifier>Recordaig_Impact_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -125,8 +154,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.aig_Status__c</fieldItem>
-                <identifier>Recordaig_Status_cField</identifier>
+                <fieldItem>Record.aig_Likelihood__c</fieldItem>
+                <identifier>Recordaig_Likelihood_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-7dadbf41-6749-4410-9311-2e3dac14f87f</name>
@@ -149,8 +178,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.aig_Impact__c</fieldItem>
-                <identifier>Recordaig_Impact_cField</identifier>
+                <fieldItem>Record.aig_Category__c</fieldItem>
+                <identifier>Recordaig_Category_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -159,18 +188,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.aig_Likelihood__c</fieldItem>
-                <identifier>Recordaig_Likelihood_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.aig_Risk__c</fieldItem>
-                <identifier>Recordaig_Risk_cField</identifier>
+                <fieldItem>Record.aig_Risk_Level__c</fieldItem>
+                <identifier>Recordaig_Risk_Level_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-55f3f949-9a09-4802-bf27-fb46cc2c8cf0</name>
@@ -198,6 +217,130 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-68d06250-6562-464a-8131-af7e796c7194</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.aig_AI_Compliance_Checklist_Question__c</fieldItem>
+                <identifier>Recordaigov__aig_AI_Compliance_Checklist_Question__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-905d34b7-4f0a-4244-9cb1-461eba77e6c7</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.aig_From_Compliance_Checklist__c</fieldItem>
+                <identifier>Recordaigov__aig_From_Compliance_Checklist__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-9d628016-6805-4b61-9550-ced4676046e8</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-905d34b7-4f0a-4244-9cb1-461eba77e6c7</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column8</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-9d628016-6805-4b61-9550-ced4676046e8</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-bbce21cb-79a3-4fe7-b1b2-e25ed390f772</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.aig_AI_Use_Case__c</fieldItem>
+                <identifier>Recordaig_AI_Use_Case_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.aig_Decision_Maker__c</fieldItem>
+                <identifier>Recordaigov_aig_Decision_Maker_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-87be37b5-4686-4890-b62d-f83da882df38</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.aig_Status__c</fieldItem>
+                <identifier>Recordaig_Status_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-22b781b0-984c-4f00-8223-4ad09b6e37d3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-87be37b5-4686-4890-b62d-f83da882df38</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column6</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-22b781b0-984c-4f00-8223-4ad09b6e37d3</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-f391340b-6da8-45e0-add9-d8a17e47a3a1</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -255,6 +398,37 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>aigMultipleChoicePLGen</componentName>
+                <identifier>aigov_aigMultipleChoicePLGen</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.aig_From_Compliance_Checklist__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-40e217db-5fd6-4d75-be2a-ce8b17d9fe28</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Detail</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-68d06250-6562-464a-8131-af7e796c7194</value>
@@ -265,10 +439,53 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Information</value>
+                    <value>Impact / Likelihood</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-bbce21cb-79a3-4fe7-b1b2-e25ed390f772</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Compliance Checklist Details</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection5</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.aig_From_Compliance_Checklist__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-f391340b-6da8-45e0-add9-d8a17e47a3a1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Informaiton</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

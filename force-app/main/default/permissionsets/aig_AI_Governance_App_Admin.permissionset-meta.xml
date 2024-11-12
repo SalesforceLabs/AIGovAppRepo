@@ -21,6 +21,51 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist_Question__c.aig_Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist_Question__c.aig_Category__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist_Question__c.aig_Default_Decision_Maker__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist_Question__c.aig_Question__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist_Question__c.aig_Response_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist_Resp_Choice__c.aig_Impact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist_Resp_Choice__c.aig_Likelihood__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Compliance_Checklist__c.aig_Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>aig_AI_Compliance_Checklist__c.aig_Num_of_Active_Questions__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Data_Source__c.aig_Classification__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -251,6 +296,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Use_Case_Risk__c.aig_AI_Compliance_Checklist_Question__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Acceptable_Risk__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -261,12 +311,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Use_Case_Risk__c.aig_Compliance_Checklist_Question_Resp__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Decision_Maker__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>aig_AI_Use_Case_Risk__c.aig_From_Compliance_Checklist__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -317,6 +377,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Use_Case_Stakeholder__c.aig_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>aig_AI_Use_Case_Stakeholder__c.aig_Stakeholder_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -386,6 +451,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>aig_AI_Use_Case__c.aig_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>aig_AI_Use_Case__c.aig_App__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -422,12 +492,39 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>AI Governance App Admin</label>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
+        <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>aig_AI_Application_Implementation__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Compliance_Checklist_Question__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Compliance_Checklist_Resp_Choice__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Compliance_Checklist__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -467,7 +564,7 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
+        <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
@@ -535,6 +632,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>aig_AI_Use_Case_Stakeholder__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>aig_AI_Use_Case_Test__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -549,6 +655,10 @@
     </objectPermissions>
     <tabSettings>
         <tab>aig_AI_Application_Implementation__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>aig_AI_Compliance_Checklist__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

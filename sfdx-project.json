@@ -4,9 +4,10 @@
       "path": "force-app",
       "default": true,
       "package": "AI Governance",
-      "versionName": "ver 0.2",
-      "versionNumber": "0.2.0.NEXT",
-      "versionDescription": ""
+      "versionName": "ver 0.3",
+      "versionNumber": "0.3.0.NEXT",
+      "versionDescription": "",
+      "ancestorVersion": "0.2.0"
     }
   ],
   "name": "AI Governance",
@@ -23,6 +24,8 @@
     "AI Governance@0.1.0-6": "04tbn000000X3ojAAC",
     "AI Governance@0.1.0-7": "04tbn000000X4JNAA0",
     "AI Governance@0.1.0-8": "04tbn000000X4knAAC",
-    "AI Governance@0.2.0-2": "04tbn000000X5wzAAC"
+    "AI Governance@0.2.0-2": "04tbn000000X5wzAAC",
+    "AI Governance@0.3.0-1": "04tbn000000nyXhAAI",
+    "AI Governance@0.3.0-2": "04tbn000000nye9AAA"
   }
 }

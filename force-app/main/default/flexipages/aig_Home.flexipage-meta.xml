@@ -74,6 +74,9 @@
                         <valueListItems>
                             <value>aigov__aig_AI_Stakeholder__c</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>aigov__aig_AI_Compliance_Checklist__c</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>

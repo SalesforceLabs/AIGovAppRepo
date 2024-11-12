@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Use_Case_ID</name>
+        <label>Assign Use Case ID</label>
+        <locationX>264</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Data_Sources.aig_AI_Use_Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varCurrentUseCase.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Stakeholder_for_Cloned_Use_Case</targetReference>
+        </connector>
+    </assignments>
+    <description>Clones stakeholders related to AIG Clone Use Case Flow</description>
+    <environments>Default</environments>
+    <interviewLabel>AIG Sub Flow Clone Stakeholders {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AIG Sub Flow Clone Stakeholders</label>
+    <loops>
+        <name>Loop_Data_Sources</name>
+        <label>Loop Data Sources</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <collectionReference>Get_Stakeholders</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Use_Case_ID</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Stakeholder_for_Cloned_Use_Case</name>
+        <label>Create Stakeholder for Cloned Use Case</label>
+        <locationX>264</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Loop_Data_Sources</targetReference>
+        </connector>
+        <inputReference>Loop_Data_Sources</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>Gets stakeholders related to recordId from parent flow</description>
+        <name>Get_Stakeholders</name>
+        <label>Get Use Case Stakeholders</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Data_Sources</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>aig_AI_Use_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>aig_AI_Use_Case_Stakeholder__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>aig_Role__c</queriedFields>
+        <queriedFields>aig_Responsibilities__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Stakeholders</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Grabs record id from parent flow</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Grabs current use case ID from parent flow</description>
+        <name>varCurrentUseCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>aig_AI_Use_Case__c</objectType>
+    </variables>
+</Flow>

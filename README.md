@@ -1,18 +1,8 @@
-# Salesforce DX Project: Next Steps
+# AI Governance App
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+The AI Governance and Management App is a comprehensive solution for overseeing AI initiatives within your organization. This app is designed to provide a robust framework for documenting, tracking, and managing various aspects of AI development and deployment. With a focus on transparency, compliance, and strategic alignment, this app offers a range of features to support your AI governance needs.
 
-## How Do You Plan to Deploy Your Changes?
+## Change Log
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+- feature/use-case-clone-flows - Added the ability to clone AI Use Cases, including all of the detail components.
+- feature/ai-compliance-checklist - Added functionality for Compliance Checklists to allow a grouping of questions to be associated to Individual AI Use Case.  Also, added Account to AI_Use_Case__c to track related Agency, Department, etc. 
