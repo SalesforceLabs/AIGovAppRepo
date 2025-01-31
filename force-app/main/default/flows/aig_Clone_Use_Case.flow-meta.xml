@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Record_ID_and_Owner</name>
         <label>Assign Record ID and Owner and set status</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>varCurrentUseCase.OwnerId</assignToReference>
@@ -35,12 +35,110 @@
             <targetReference>Create_Cloned_Use_Case</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Copy_1_of_Assign_Record_ID_and_Owner_and_set_status</name>
+        <label>Copy 1 of Assign Record ID and Owner and set status</label>
+        <locationX>886</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.aig_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.Cloned_From__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varCurrentUseCase.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCurrentUseCase.Id</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Create_Cloned_Use_Case</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>AI_Features</name>
+        <choiceText>AI Features</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>AI Features</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Data_Sources</name>
+        <choiceText>Data Sources</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Data Sources</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Endpoints</name>
+        <choiceText>Endpoints</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Endpoints</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Feedback</name>
+        <choiceText>Feedback</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Feedback</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Models</name>
+        <choiceText>Models</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Models</stringValue>
+        </value>
+    </choices>
     <choices>
         <name>No</name>
         <choiceText>No</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Risks</name>
+        <choiceText>Risks</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Risks</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Stakeholders</name>
+        <choiceText>Stakeholders</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Stakeholders</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Test_Cases</name>
+        <choiceText>Test Cases</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Test Cases</stringValue>
         </value>
     </choices>
     <choices>
@@ -54,7 +152,7 @@
     <decisions>
         <name>Check_for_Errors</name>
         <label>Check for Errors</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>674</locationY>
         <defaultConnector>
             <targetReference>Display_Error_Message</targetReference>
@@ -68,18 +166,190 @@
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
-                <targetReference>Success_Message</targetReference>
+                <targetReference>Clone_AI_Features</targetReference>
             </connector>
             <label>No Errors</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Clone_AI_Features</name>
+        <label>Clone AI Features?</label>
+        <locationX>182</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>Clone_Data_Sources</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_clonefeatures</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Which_related_records_do_you_want_to_clone</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>AI_Features</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clone_AI_Features_Subflow</targetReference>
+            </connector>
+            <label>Yes clone features</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Clone_Data_Sources</name>
+        <label>Clone Data Sources?</label>
+        <locationX>182</locationX>
+        <locationY>1082</locationY>
+        <defaultConnector>
+            <targetReference>Clone_Models</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Clone_Data_Sources</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Which_related_records_do_you_want_to_clone</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Data_Sources</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clone_Data_Sources_Subflow</targetReference>
+            </connector>
+            <label>Yes Clone Data Sources</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Clone_End_Points</name>
+        <label>Clone End Points?</label>
+        <locationX>182</locationX>
+        <locationY>1682</locationY>
+        <defaultConnector>
+            <targetReference>Clone_Stakeholders</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Clone_Endpoints</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Which_related_records_do_you_want_to_clone</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Endpoints</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clone_Endpoints_Subflow</targetReference>
+            </connector>
+            <label>Yes Clone Endpoints</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Clone_Models</name>
+        <label>Clone Models?</label>
+        <locationX>182</locationX>
+        <locationY>1382</locationY>
+        <defaultConnector>
+            <targetReference>Clone_End_Points</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Clone_Models</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Which_related_records_do_you_want_to_clone</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Models</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clone_Models_Subflow</targetReference>
+            </connector>
+            <label>Yes Clone Models</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Clone_Risks</name>
+        <label>Clone Risks?</label>
+        <locationX>182</locationX>
+        <locationY>2282</locationY>
+        <defaultConnector>
+            <targetReference>Success_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_clone_risks</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Which_related_records_do_you_want_to_clone</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Risks</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clone_Risks_Subflow</targetReference>
+            </connector>
+            <label>Yes clone risks</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Clone_Stakeholders</name>
+        <label>Clone Stakeholders?</label>
+        <locationX>182</locationX>
+        <locationY>1982</locationY>
+        <defaultConnector>
+            <targetReference>Clone_Risks</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_clone_stakeholders</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Which_related_records_do_you_want_to_clone</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Stakeholders</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clone_Stakeholder_Subflow</targetReference>
+            </connector>
+            <label>Yes clone stakeholders</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Check_for_Errors</name>
+        <label>Copy 1 of Check for Errors</label>
+        <locationX>886</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Display_Error_Message2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Flow Error</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_No_Errors</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Copy_1_of_Create_Cloned_Use_Case</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Success_Message2</targetReference>
+            </connector>
+            <label>Copy 1 of No Errors</label>
         </rules>
     </decisions>
     <decisions>
         <description>Determines whether user moves forward with cloning process</description>
         <name>Proceed_with_cloning</name>
         <label>Proceed with cloning?</label>
-        <locationX>380</locationX>
+        <locationX>809</locationX>
         <locationY>242</locationY>
-        <defaultConnectorLabel>No do not process</defaultConnectorLabel>
+        <defaultConnectorLabel>No do not proceed</defaultConnectorLabel>
         <rules>
             <name>Yes_process_with_cloning</name>
             <conditionLogic>and</conditionLogic>
@@ -90,13 +360,43 @@
                     <stringValue>Yes</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Do_you_want_to_clone_related_records</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Get_Current_Use_Case</targetReference>
             </connector>
-            <label>Yes proceed with cloning</label>
+            <label>Yes proceed with cloning all records</label>
+        </rules>
+        <rules>
+            <name>Yes_but_only_fields</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Are_you_sure_you_want_to_clone_this_use_case</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Do_you_want_to_clone_related_records</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>No</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Get_Current_Use_Case</targetReference>
+            </connector>
+            <label>Yes but only fields</label>
         </rules>
     </decisions>
-    <description>This flow is part of the AI Governance Accelerator. It&apos;s purpose is to clone an existing use case using it as a template for a new use case.</description>
+    <description>This flow is part of the AI Governance Accelerator. It&apos;s purpose is to clone an existing use case using it as a template for a new use case.
+adding in sub flows to see what happens</description>
     <environments>Default</environments>
     <formulas>
         <description>dynamic URL to take user to newly cloned record</description>
@@ -126,9 +426,19 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>Copy_1_of_Create_Cloned_Use_Case</name>
+        <label>Copy 1 of Create Cloned Use Case</label>
+        <locationX>886</locationX>
+        <locationY>566</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Check_for_Errors</targetReference>
+        </connector>
+        <inputReference>varCurrentUseCase</inputReference>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Cloned_Use_Case</name>
         <label>Create Cloned Use Case</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>566</locationY>
         <connector>
             <targetReference>Check_for_Errors</targetReference>
@@ -136,9 +446,36 @@
         <inputReference>varCurrentUseCase</inputReference>
     </recordCreates>
     <recordLookups>
+        <name>Copy_1_of_Get_Current_Use_Case</name>
+        <label>Copy 1 of Get Current Use Case</label>
+        <locationX>886</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Assign_Record_ID_and_Owner_and_set_status</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>aig_AI_Use_Case__c</object>
+        <outputReference>varCurrentUseCase</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>aig_Overview__c</queriedFields>
+        <queriedFields>aig_App__c</queriedFields>
+        <queriedFields>aig_Description__c</queriedFields>
+        <queriedFields>aig_Objective__c</queriedFields>
+        <queriedFields>aig_Expected_Outcome__c</queriedFields>
+        <queriedFields>aig_Regulatory_Evaluation__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Current_Use_Case</name>
         <label>Get Current Use Case</label>
-        <locationX>182</locationX>
+        <locationX>336</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -166,7 +503,7 @@
     <screens>
         <name>Confirm_Cloning_Screen</name>
         <label>Confirm Cloning Screen</label>
-        <locationX>380</locationX>
+        <locationX>809</locationX>
         <locationY>134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -189,13 +526,60 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
         </fields>
+        <fields>
+            <name>Do_you_want_to_clone_related_records</name>
+            <choiceReferences>Yes</choiceReferences>
+            <choiceReferences>No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Do you want to clone related records?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Are_you_sure_you_want_to_clone_this_use_case</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Which_related_records_do_you_want_to_clone</name>
+            <choiceReferences>AI_Features</choiceReferences>
+            <choiceReferences>Data_Sources</choiceReferences>
+            <choiceReferences>Models</choiceReferences>
+            <choiceReferences>Endpoints</choiceReferences>
+            <choiceReferences>Stakeholders</choiceReferences>
+            <choiceReferences>Risks</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>true</stringValue>
+            </defaultValue>
+            <fieldText>Which related records do you want to clone?</fieldText>
+            <fieldType>MultiSelectCheckboxes</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Do_you_want_to_clone_related_records</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <screens>
         <name>Display_Error_Message</name>
         <label>Display Error Message</label>
-        <locationX>314</locationX>
+        <locationX>490</locationX>
         <locationY>782</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -209,10 +593,26 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Display_Error_Message2</name>
+        <label>Display Error Message</label>
+        <locationX>1018</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Copy_1_of_ErrorMessage</name>
+            <fieldText>&lt;p&gt;This cloning attempt has encountered an error. Please attempt to clone again. If the error persists, reach out to your system adminitrator. &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Success_Message</name>
         <label>Success Message</label>
-        <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationX>182</locationX>
+        <locationY>2582</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -224,14 +624,162 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>Success_Message2</name>
+        <label>Success Message</label>
+        <locationX>754</locationX>
+        <locationY>782</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Copy_1_of_NavigatetoRecord</name>
+            <fieldText>&lt;p&gt;Use case successfully cloned: &lt;a href=&quot;{!fRecordURL}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Click Here to View&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>254</locationX>
+        <locationX>683</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Confirm_Cloning_Screen</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <subflows>
+        <name>Clone_AI_Features_Subflow</name>
+        <label>Clone AI Features Subflow</label>
+        <locationX>50</locationX>
+        <locationY>890</locationY>
+        <connector>
+            <targetReference>Clone_Data_Sources</targetReference>
+        </connector>
+        <flowName>AIG_Sub_Flow_Clone_AI_Features</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varCurrentUseCase</name>
+            <value>
+                <elementReference>varCurrentUseCase</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Clone_Data_Sources_Subflow</name>
+        <label>Clone Data Sources</label>
+        <locationX>50</locationX>
+        <locationY>1190</locationY>
+        <connector>
+            <targetReference>Clone_Models</targetReference>
+        </connector>
+        <flowName>AIG_Sub_Flow_CloneDataSources</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varCurrentUseCase</name>
+            <value>
+                <elementReference>varCurrentUseCase</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Clone_Endpoints_Subflow</name>
+        <label>Clone Endpoints Subflow</label>
+        <locationX>50</locationX>
+        <locationY>1790</locationY>
+        <connector>
+            <targetReference>Clone_Stakeholders</targetReference>
+        </connector>
+        <flowName>AIG_Sub_Flow_Clone_Endpoints</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varCurrentUseCase</name>
+            <value>
+                <elementReference>varCurrentUseCase</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Clone_Models_Subflow</name>
+        <label>Clone Models Subflow</label>
+        <locationX>50</locationX>
+        <locationY>1490</locationY>
+        <connector>
+            <targetReference>Clone_End_Points</targetReference>
+        </connector>
+        <flowName>AIG_Sub_Flow_Clone_Models</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varCurrentUseCase</name>
+            <value>
+                <elementReference>varCurrentUseCase</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Clone_Risks_Subflow</name>
+        <label>Clone Risks Subflow</label>
+        <locationX>50</locationX>
+        <locationY>2390</locationY>
+        <connector>
+            <targetReference>Success_Message</targetReference>
+        </connector>
+        <flowName>AIG_Sub_Flow_Clone_Risks</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varCurrentUseCase</name>
+            <value>
+                <elementReference>varCurrentUseCase</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Clone_Stakeholder_Subflow</name>
+        <label>Clone Stakeholder Subflow</label>
+        <locationX>50</locationX>
+        <locationY>2090</locationY>
+        <connector>
+            <targetReference>Clone_Risks</targetReference>
+        </connector>
+        <flowName>AIG_Sub_Flow_Clone_Stakeholders</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varCurrentUseCase</name>
+            <value>
+                <elementReference>varCurrentUseCase</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
     <textTemplates>
         <name>ClonedUseCaseName</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -242,14 +790,14 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
-        <isOutput>false</isOutput>
+        <isOutput>true</isOutput>
     </variables>
     <variables>
         <name>varCurrentUseCase</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
-        <isOutput>false</isOutput>
+        <isOutput>true</isOutput>
         <objectType>aig_AI_Use_Case__c</objectType>
     </variables>
 </Flow>

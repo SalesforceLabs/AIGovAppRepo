@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This message channel is used to communicate updates related to AI Use Case Risk records.</description>
+    <isExposed>false</isExposed>
+    <masterLabel>AIG AI Use Case Risk Message Channel</masterLabel>
+</LightningMessageChannel>
