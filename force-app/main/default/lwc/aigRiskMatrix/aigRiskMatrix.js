@@ -1,8 +1,11 @@
 import { LightningElement, api, wire } from 'lwc';
-import { getRecord } from 'lightning/uiRecordApi';
+import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+import { subscribe, MessageContext } from 'lightning/messageService';
+import { refreshApex } from '@salesforce/apex'; // Import refreshApex
 import AIG_IMPACT_FIELD from '@salesforce/schema/aig_AI_Use_Case_Risk__c.aig_Impact__c';
 import AIG_LIKELIHOOD_FIELD from '@salesforce/schema/aig_AI_Use_Case_Risk__c.aig_Likelihood__c';
 import AIG_RISK_SCORE_FIELD from '@salesforce/schema/aig_AI_Use_Case_Risk__c.aig_Risk_Score__c';
+import AIG_AI_USE_CASE_RISK_MSG_CHANNEL from '@salesforce/messageChannel/aigAIUseCaseRiskMsgChannel__c'; 
 
 const fields = [AIG_IMPACT_FIELD, AIG_LIKELIHOOD_FIELD, AIG_RISK_SCORE_FIELD];
 
@@ -28,72 +31,97 @@ export default class AigRiskMatrix extends LightningElement {
     likelihood;
     riskScore;
     rows = [];
+    subscription = null;
+    wiredRiskRecord; // To store the wired record result for refresh
 
+    // Wire the message context
+    @wire(MessageContext)
+    messageContext;
+
+    // Subscribe to the message channel when the component is initialized
+    connectedCallback() {
+        this.subscribeToMessageChannel();
+    }
+
+    subscribeToMessageChannel() {
+        if (!this.subscription) {
+            this.subscription = subscribe(
+                this.messageContext,
+                AIG_AI_USE_CASE_RISK_MSG_CHANNEL,
+                (message) => this.handleMessage(message)
+            );
+        }
+    }
+
+    handleMessage(message) {
+        // Check if the message contains the recordId of interest
+        if (message.recordId === this.recordId) {
+            // Refresh the risk matrix by manually refreshing the wire adapter data
+            this.refreshRiskMatrix();
+        }
+    }
+
+    // Wire the record data
     @wire(getRecord, { recordId: '$recordId', fields })
-    riskRecord({ error, data }) {
+    wiredRiskRecord(result) {
+        this.wiredRiskRecord = result; // Store the wired result for future refresh
+
+        const { data, error } = result;
         if (data) {
-            this.impact = data.fields.aigov__aig_Impact__c.value;
-            this.likelihood = data.fields.aigov__aig_Likelihood__c.value;
-            this.riskScore = data.fields.aigov__aig_Risk_Score__c.value;
-            console.log('Impact:', this.impact);
-            console.log('Likelihood:', this.likelihood);
-            
-            console.log('Risk Score:', this.riskScore);
+            this.impact = getFieldValue(data, AIG_IMPACT_FIELD);
+            this.likelihood = getFieldValue(data, AIG_LIKELIHOOD_FIELD);
+            this.riskScore = getFieldValue(data, AIG_RISK_SCORE_FIELD);
             this.generateMatrix();
         } else if (error) {
             console.error('Error retrieving record:', error);
         }
     }
 
-    generateMatrix() {
-        console.log('Generating matrix...');
-        console.log('Impact:', this.impact);
-        console.log('Likelihood:', this.likelihood);
-        console.log('Risk Score:', this.riskScore);
+    // Method to refresh the record data
+    refreshRiskMatrix() {
+        // Use refreshApex to refresh the wire data
+        refreshApex(this.wiredRiskRecord);
+    }
 
+    generateMatrix() {
         const impactValue = impactMapping[this.impact];
         const likelihoodValue = likelihoodMapping[this.likelihood];
         const riskScoreValue = this.riskScore;
 
-        console.log('Mapped Impact:', impactValue);
-        console.log('Mapped Likelihood:', likelihoodValue);
-        console.log('Risk Score Value:', riskScoreValue);
-
         let matrix = [];
         for (let i = 1; i <= 5; i++) { // Likelihood from Very Unlikely (bottom) to Very Likely (top)
-            let row = { rowKey: 'row-${i}', cells: [] };
+            let row = { rowKey: `row-${i}`, cells: [] };
             for (let j = 5; j >= 1; j--) { // Impact from Very Low (left) to Very High (right)
-                //let cellClass = 'custom-cell slds-box slds-box_x-small slds-align_absolute-center';
-                let cellClass = 'custom-cell  slds-box_x-small slds-align_absolute-center';
+                let cellClass = 'custom-cell slds-box_x-small slds-align_absolute-center';
                 let value = '';
-                if (( i=== 1 && j === 1) || ( i=== 1 && j === 2) || ( i=== 2 && j === 1)) {
+
+                if ((i === 1 && j === 1) || (i === 1 && j === 2) || (i === 2 && j === 1)) {
                     cellClass += ' highlight-very-low';
                 }
-                if (( i=== 2 && j === 2) || ( i=== 1 && j === 3) || ( i=== 3 && j === 1)) {
+                if ((i === 2 && j === 2) || (i === 1 && j === 3) || (i === 3 && j === 1)) {
                     cellClass += ' highlight-low';
                 }
-                if (( i=== 3 && j === 3) || ( i=== 1 && j === 5) || ( i=== 5 && j === 1) 
-                    || ( i=== 1 && j === 4) || ( i=== 4 && j === 1)
-                    || ( i=== 2 && j === 4) || ( i=== 4 && j === 2)
-                    || ( i=== 2 && j === 3) || ( i=== 3 && j === 2)) {
+                if ((i === 3 && j === 3) || (i === 1 && j === 5) || (i === 5 && j === 1) 
+                    || (i === 1 && j === 4) || (i === 4 && j === 1)
+                    || (i === 2 && j === 4) || (i === 4 && j === 2)
+                    || (i === 2 && j === 3) || (i === 3 && j === 2)) {
                     cellClass += ' highlight-moderate';
                 }
-                if (( i=== 5 && j === 2) || ( i=== 2 && j === 5) || ( i=== 4 && j === 3) || ( i=== 3 && j === 4)) {
+                if ((i === 5 && j === 2) || (i === 2 && j === 5) || (i === 4 && j === 3) || (i === 3 && j === 4)) {
                     cellClass += ' highlight-mod-high';
                 }
-                if (( i=== 4 && j === 4) || ( i=== 5 && j === 3) || ( i=== 3 && j === 5)) {
+                if ((i === 4 && j === 4) || (i === 5 && j === 3) || (i === 3 && j === 5)) {
                     cellClass += ' highlight-high';
                 }
-                if (( i=== 5 && j === 5) || ( i=== 4 && j === 5) || ( i=== 5 && j === 4)) {
+                if ((i === 5 && j === 5) || (i === 4 && j === 5) || (i === 5 && j === 4)) {
                     cellClass += ' highlight-very-high';
                 }
 
                 if (i === likelihoodValue && j === impactValue) {
                     cellClass += ' highlight';
                     value = riskScoreValue;
-                    console.log('Setting risk score at [' + i +',' + j + '] to ' +  riskScoreValue);
                 }
-                let cell = { cellKey: 'cell-${i}-${j}', value, cellClass };
+                let cell = { cellKey: `cell-${i}-${j}`, value, cellClass };
                 row.cells.push(cell);
             }
             matrix.push(row);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>aig_Likelihood__c</fullName>
+    <label>Likelihood</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Very Unlikely</fullName>
+                <default>false</default>
+                <label>🟩 Very Unlikely</label>
+            </value>
+            <value>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+                <label>🟨 Unlikely</label>
+            </value>
+            <value>
+                <fullName>Possible</fullName>
+                <default>false</default>
+                <label>🟧 Possible</label>
+            </value>
+            <value>
+                <fullName>Likely</fullName>
+                <default>false</default>
+                <label>🟥 Likely</label>
+            </value>
+            <value>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+                <label>⬛️ Very Likely</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
