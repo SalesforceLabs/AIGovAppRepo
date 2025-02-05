@@ -4,6 +4,18 @@
         <application>aig_AI_Governance</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>aigAuditUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>aigMultipleChoicePLGenController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>aig_AI_Gov_Audit_Config__mdt</name>
+    </customMetadataTypeAccesses>
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Application_Implementation__c.aig_Description__c</field>
@@ -17,51 +29,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Application_Implementation__c.aig_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist_Question__c.aig_Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist_Question__c.aig_Category__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist_Question__c.aig_Default_Decision_Maker__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist_Question__c.aig_Question__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist_Question__c.aig_Response_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist_Resp_Choice__c.aig_Impact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist_Resp_Choice__c.aig_Likelihood__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>aig_AI_Compliance_Checklist__c.aig_Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>aig_AI_Compliance_Checklist__c.aig_Num_of_Active_Questions__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -172,6 +139,46 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Features__c.aig_License_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_Change_Maker__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_Change_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_Field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_New_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_Object__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_Old_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_RecordId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>aig_AI_Gov_Audit_Event__c.aig_Transaction_DateTime__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -296,11 +303,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>aig_AI_Use_Case_Risk__c.aig_AI_Compliance_Checklist_Question__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Acceptable_Risk__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -311,22 +313,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>aig_AI_Use_Case_Risk__c.aig_Compliance_Checklist_Question_Resp__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Decision_Maker__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Use_Case_Risk__c.aig_Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>aig_AI_Use_Case_Risk__c.aig_From_Compliance_Checklist__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -377,11 +369,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>aig_AI_Use_Case_Stakeholder__c.aig_Role__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>aig_AI_Use_Case_Stakeholder__c.aig_Stakeholder_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -451,11 +438,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>aig_AI_Use_Case__c.aig_Account__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>aig_AI_Use_Case__c.aig_App__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -492,39 +474,12 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>AI Governance App Admin</label>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
+        <allowCreate>false</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>aig_AI_Application_Implementation__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>aig_AI_Compliance_Checklist_Question__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>aig_AI_Compliance_Checklist_Resp_Choice__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>aig_AI_Compliance_Checklist__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -556,6 +511,15 @@
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>aig_AI_Gov_Audit_Event__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
@@ -564,7 +528,7 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
+        <allowCreate>false</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
@@ -632,15 +596,6 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>aig_AI_Use_Case_Stakeholder__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
         <object>aig_AI_Use_Case_Test__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -658,10 +613,6 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>aig_AI_Compliance_Checklist__c</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>aig_AI_Data_Source__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
@@ -671,6 +622,10 @@
     </tabSettings>
     <tabSettings>
         <tab>aig_AI_Features__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>aig_AI_Gov_Audit_Event__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

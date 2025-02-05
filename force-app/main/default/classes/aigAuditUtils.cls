@@ -1,4 +1,4 @@
-public class AuditUtils {
+public class aigAuditUtils {
 
     public static void auditChanges(List<SObject> newRecords, Map<Id, SObject> oldMap) {
         String objectAPIName = newRecords[0].getSObjectType().getDescribe().getName();

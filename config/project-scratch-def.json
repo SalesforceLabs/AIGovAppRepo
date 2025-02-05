@@ -2,7 +2,7 @@
   "orgName": "bryan.wise company",
   "edition": "Partner Developer",
   "namespace": "aigov",
-  "features": ["EnableSetPasswordInApi","EINSTEIN1AIPLATFORM"],
+  "features": ["EnableSetPasswordInApi","EINSTEIN1AIPLATFORM","DebugApex"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true

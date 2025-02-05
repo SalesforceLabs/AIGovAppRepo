@@ -3,11 +3,11 @@
     <label>AI Use Case Description</label>
     <protected>false</protected>
     <values>
-        <field>Field__c</field>
+        <field>aig_Field__c</field>
         <value xsi:type="xsd:string">aigov__aig_Description__c</value>
     </values>
     <values>
-        <field>Object__c</field>
+        <field>aig_Object__c</field>
         <value xsi:type="xsd:string">aigov__aig_AI_Use_Case__c</value>
     </values>
 </CustomMetadata>
