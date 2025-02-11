@@ -60,6 +60,7 @@
     <tabs>aig_AI_Endpoint__c</tabs>
     <tabs>aig_AI_Stakeholder__c</tabs>
     <tabs>aig_AI_Compliance_Checklist__c</tabs>
+    <tabs>aig_AI_Gov_Audit_Event__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>AI_Governance_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -77,6 +78,9 @@
         </mappings>
         <mappings>
             <tab>aig_AI_Features__c</tab>
+        </mappings>
+        <mappings>
+            <tab>aig_AI_Gov_Audit_Event__c</tab>
         </mappings>
         <mappings>
             <tab>aig_AI_Model__c</tab>
