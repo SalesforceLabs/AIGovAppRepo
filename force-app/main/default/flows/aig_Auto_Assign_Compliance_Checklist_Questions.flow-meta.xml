@@ -93,7 +93,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>oAIUseCaseCC.Category__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_Category__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>for_each_Active_Compliance_Checklist_Question.aig_Category__c</elementReference>

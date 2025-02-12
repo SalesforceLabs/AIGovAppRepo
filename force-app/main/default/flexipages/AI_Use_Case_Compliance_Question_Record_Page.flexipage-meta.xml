@@ -113,8 +113,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Category__c</fieldItem>
-                <identifier>Recordaigov_Category_cField</identifier>
+                <fieldItem>Record.aig_Category__c</fieldItem>
+                <identifier>Recordaigov_aig_Category_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
