@@ -1,1 +1,69 @@
-.sfdx
+# Salesforce DX specific directories
+.sfdx/  # Contains auth files, temporary metadata, and source tracking
+
+# Scratch org authentication and security files
+*.json   # Avoid committing sensitive authentication files (e.g., auth URLs)
+*.key    # Private keys for JWT authentication
+*.crt    # Certificates for JWT authentication
+*.pem    # Security keys
+
+# IDE-specific files
+.vscode/  # VS Code workspace settings
+*.sublime-workspace  # Sublime Text workspace settings
+.idea/  # JetBrains (IntelliJ, WebStorm, etc.) project settings
+.DS_Store  # macOS system file
+
+# Node.js dependencies (if using npm)
+node_modules/  # Dependencies installed via package.json
+package-lock.json  # Lock file for npm
+
+# Logs and temp files
+*.log  # Log files (general)
+npm-debug.log*  # npm error logs
+yarn-debug.log*  # Yarn error logs
+yarn-error.log*  # Yarn error logs
+
+# VS Code Extensions (for Salesforce Code Builder)
+.vscode-test/
+
+# SFDX Project Files (forceignored metadata)
+.sfdx/tools/
+.localdevserver/
+
+# Ignore deploy & retrieve temp files
+deploy/
+retrieve/
+
+# Ignore unpackaged & destructive changes temp files
+unpackaged/
+destructiveChanges/
+
+# Git-ignored metadata (optional)
+**/globalValueSets/*  # Avoid constant conflicts in Global Value Sets
+**/layouts/*  # Layouts often change dynamically
+**/profiles/*  # Profiles are large and can cause conflicts
+**/permissionsets/*  # Similar to profiles, frequent changes
+
+.sfdx/sfdx-config.json
+.sf/config.json
+
+#Profiles to exclude
+force-app/main/default/profiles/Admin.profile-meta.xml
+force-app/main/default/profiles/B2B Reordering Portal Buyer Profile.profile-meta.xml
+force-app/main/default/profiles/Custom%3A Marketing Profile.profile-meta.xml
+force-app/main/default/profiles/Custom%3A Sales Profile.profile-meta.xml
+force-app/main/default/profiles/Custom%3A Support Profile.profile-meta.xml
+force-app/main/default/profiles/ReadOnly.profile-meta.xml
+.DS_Store
+
+#Temporary files
+.sf/orgs/00DRL000009jJAz2AM/localSourceTracking/objects/*
+.sf/orgs/00DRL000009jJAz2AM/localSourceTracking/config
+.sf/orgs/00DRL000009jJAz2AM/localSourceTracking/HEAD
+.sf/orgs/00DRL000009jJAz2AM/localSourceTracking/index
+.sf/orgs/00DRL000009jJAz2AM/localSourceTracking/refs/heads/main
+
+force-app/main/default/permissionsetgroups/force__AgentforceServiceAgentUserPsg.permissionsetgroup-meta.xml
+force-app/main/default/permissionsetgroups/force__CopilotSalesforceAdminPSG.permissionsetgroup-meta.xml
+force-app/main/default/permissionsetgroups/force__CopilotSalesforceUserPSG.permissionsetgroup-meta.xml
+.sf/orgs/00DRL000009jJAz2AM/maxRevision.json

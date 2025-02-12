@@ -7,14 +7,14 @@
         <locationX>2822</locationX>
         <locationY>1106</locationY>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_Decision_Maker__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_Decision_Maker__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AI_Use_Case_Stakeholder_Check.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Assign_to_Collection_of_AI_Use_Case_Risks</targetReference>
+            <targetReference>Assign_to_Collection_of_AI_Use_Case_Compliance_Checklist</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -23,14 +23,14 @@
         <locationX>3086</locationX>
         <locationY>1214</locationY>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_Decision_Maker__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_Decision_Maker__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>AI_Use_Case_Stakeholder</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Assign_to_Collection_of_AI_Use_Case_Risks</targetReference>
+            <targetReference>Assign_to_Collection_of_AI_Use_Case_Compliance_Checklist</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -51,15 +51,15 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_to_Collection_of_AI_Use_Case_Risks</name>
-        <label>Assign to Collection of AI Use Case Risks</label>
+        <name>Assign_to_Collection_of_AI_Use_Case_Compliance_Checklist</name>
+        <label>Assign to Collection of AI Use Case Compliance Checklists</label>
         <locationX>3152</locationX>
         <locationY>1490</locationY>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisks</assignToReference>
+            <assignToReference>oAIUseCaseCCs</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>oAIUseCaseRisk</elementReference>
+                <elementReference>oAIUseCaseCC</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -67,47 +67,47 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Question_to_AI_Use_Case_Risk</name>
-        <label>Question to AI Use Case Risk</label>
+        <name>Question_to_AI_Use_Case_Compliance_Checklist</name>
+        <label>Question to AI Use Case Compliance Checklist</label>
         <locationX>3152</locationX>
         <locationY>674</locationY>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_AI_Use_Case__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_AI_Use_Case__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_Status__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_Status__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Open</stringValue>
+                <stringValue>New</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_Risk__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_Question__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>for_each_Active_Compliance_Checklist_Question.aig_Question__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_Category__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.Category__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>for_each_Active_Compliance_Checklist_Question.aig_Category__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_AI_Compliance_Checklist_Question__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_AI_Compliance_Checklist_Question__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>for_each_Active_Compliance_Checklist_Question.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisk.aig_Decision_Maker__c</assignToReference>
+            <assignToReference>oAIUseCaseCC.aig_Decision_Maker__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue></stringValue>
@@ -148,7 +148,7 @@
         <locationX>3152</locationX>
         <locationY>782</locationY>
         <defaultConnector>
-            <targetReference>Assign_to_Collection_of_AI_Use_Case_Risks</targetReference>
+            <targetReference>Assign_to_Collection_of_AI_Use_Case_Compliance_Checklist</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -192,6 +192,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
+    <description>ver 0.4 updates</description>
     <environments>Default</environments>
     <interviewLabel>Auto Assign Compliance Checklist Questions {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Auto Assign Compliance Checklist Questions</label>
@@ -206,7 +207,7 @@
             <targetReference>Get_All_Active_Compliance_Checklist_Questions</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Create_AI_Use_Case_Risks_from_AI_Compliance_Checklists</targetReference>
+            <targetReference>Create_AI_Use_Case_Compliance_Checklist_Questions_from_AI_Compliance_Checklists</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
@@ -217,7 +218,7 @@
         <collectionReference>Get_All_Active_Compliance_Checklist_Questions</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Question_to_AI_Use_Case_Risk</targetReference>
+            <targetReference>Question_to_AI_Use_Case_Compliance_Checklist</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>for_each_Active_Compliance_Checklist</targetReference>
@@ -278,11 +279,11 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
-        <name>Create_AI_Use_Case_Risks_from_AI_Compliance_Checklists</name>
-        <label>Create AI Use Case Risks from AI Compliance Checklists</label>
+        <name>Create_AI_Use_Case_Compliance_Checklist_Questions_from_AI_Compliance_Checklists</name>
+        <label>Create AI Use Case Compliance Checklist Questions from AI Compliance Checklists</label>
         <locationX>1898</locationX>
         <locationY>1766</locationY>
-        <inputReference>oAIUseCaseRisks</inputReference>
+        <inputReference>oAIUseCaseCCs</inputReference>
     </recordCreates>
     <recordLookups>
         <description>See if the Decision Maker has already been assigned</description>
@@ -387,20 +388,20 @@
         <objectType>aig_AI_Compliance_Checklist_Question__c</objectType>
     </variables>
     <variables>
-        <name>oAIUseCaseRisk</name>
+        <name>oAIUseCaseCC</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>aig_AI_Use_Case_Risk__c</objectType>
+        <objectType>aig_AI_Use_Case_Compliance_Question__c</objectType>
     </variables>
     <variables>
-        <name>oAIUseCaseRisks</name>
+        <name>oAIUseCaseCCs</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>aig_AI_Use_Case_Risk__c</objectType>
+        <objectType>aig_AI_Use_Case_Compliance_Question__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>

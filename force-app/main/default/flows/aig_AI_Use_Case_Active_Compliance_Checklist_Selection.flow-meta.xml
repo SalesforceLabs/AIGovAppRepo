@@ -18,8 +18,8 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_Number_of_Active_Risk_Packets</name>
-        <label>Assign Number of Active Risk Packets</label>
+        <name>Assign_Number_of_Active_Compliance_Checklists</name>
+        <label>Assign Number of Active Compliance Checklists</label>
         <locationX>182</locationX>
         <locationY>350</locationY>
         <assignmentItems>
@@ -179,6 +179,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
+    <description>ver0.4 updates</description>
     <environments>Default</environments>
     <interviewLabel>AI Use Case Active Compliance Checklist Selection {!$Flow.CurrentDateTime}</interviewLabel>
     <label>AI Use Case Active Compliance Checklist Selection</label>
@@ -250,7 +251,7 @@
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Number_of_Active_Risk_Packets</targetReference>
+            <targetReference>Assign_Number_of_Active_Compliance_Checklists</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -268,7 +269,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>aig_AI_Use_Case_Risk__c</object>
+        <object>aig_AI_Use_Case_Compliance_Question__c</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>aig_AI_Compliance_Checklist_Question__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>

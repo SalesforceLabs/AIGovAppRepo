@@ -17,7 +17,7 @@
         </targetConfig>
         <targetConfig targets="lightning__RecordPage">
             <objects>
-                <object>aigov__aig_AI_Use_Case_Risk__c</object>
+                 <object>aigov__aig_AI_Use_Case_Compliance_Question__c</object>
             </objects>
         </targetConfig>
     </targetConfigs>

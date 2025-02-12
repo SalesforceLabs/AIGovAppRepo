@@ -557,10 +557,6 @@
                 <identifier>flexipage_reportChart</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-c1dc16a7-164b-474a-ad32-705cf0d14335</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -629,7 +625,7 @@
                 <identifier>lst_dynamicRelatedList9</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-24b4172c-e122-4cff-a03d-4de518d1f713</name>
+        <name>Facet-2d8bfa6f-981e-4777-b9ea-736c9f2779f7</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -637,14 +633,14 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>New</value>
+                        </valueListItems>
+                    </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>adminFilters</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>aig_From_Compliance_Checklist__c|EQUALS|true</value>
-                        </valueListItems>
-                    </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>maxRecordsToDisplay</name>
@@ -656,7 +652,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListApiName</name>
-                    <value>aig_Use_Case_Risks__r</value>
+                    <value>aig_AI_UC_Compliance_Checklists__r</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListDisplayType</name>
@@ -669,7 +665,10 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>aig_Risk__c</value>
+                            <value>aig_Question__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>aig_Response__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>aig_Status__c</value>
@@ -678,7 +677,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Compliance Checklist Questions</value>
+                    <value>AI Use Case Compliance Checklists</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
@@ -693,10 +692,10 @@
                     <value>Default</value>
                 </componentInstanceProperties>
                 <componentName>lst:dynamicRelatedList</componentName>
-                <identifier>lst_dynamicRelatedList2</identifier>
+                <identifier>lst_dynamicRelatedList10</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-0c94626e-9d67-40b4-aa61-8073b95de93e</name>
+        <name>Facet-3e31b29d-aa0f-4b9e-a627-3230de79c3d9</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -718,7 +717,7 @@
                 <identifier>flowruntime_interview</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-89ff3c41-f627-4ebc-885f-493f8a807174</name>
+        <name>Facet-6c986185-bf88-44c4-9036-55e978e5d2d9</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -740,7 +739,7 @@
                 <identifier>flowruntime_interview2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-76833068-a8ac-49c3-9c5c-41fd0e85f162</name>
+        <name>Facet-16eef472-b653-45ae-ad48-5e17e697aad4</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -748,15 +747,15 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-c1dc16a7-164b-474a-ad32-705cf0d14335</value>
+                    <value>Facet-3e31b29d-aa0f-4b9e-a627-3230de79c3d9</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Metrics</value>
+                    <value>Compliance Checklist Questions</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>name</name>
-                    <value>accordionSection1</value>
+                    <value>accordionSection--4hwu7ralz6t</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
                 <identifier>flexipage_accordionSection</identifier>
@@ -766,33 +765,15 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-24b4172c-e122-4cff-a03d-4de518d1f713</value>
+                    <value>Facet-6c986185-bf88-44c4-9036-55e978e5d2d9</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Risks</value>
+                    <value>Assign Compliance Checklist(s)</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>name</name>
-                    <value>accordionSection2</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:accordionSection</componentName>
-                <identifier>flexipage_accordionSection2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-0c94626e-9d67-40b4-aa61-8073b95de93e</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Compliance Q&amp;A</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>name</name>
-                    <value>accordionSection--qhkd7dw3t8j</value>
+                    <value>accordionSection1</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
                 <identifier>flexipage_accordionSection3</identifier>
@@ -802,25 +783,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-89ff3c41-f627-4ebc-885f-493f8a807174</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Assign Compliance Checklist(s)</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>name</name>
-                    <value>accordionSection--ai7b5nfcnui</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:accordionSection</componentName>
-                <identifier>flexipage_accordionSection4</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-76833068-a8ac-49c3-9c5c-41fd0e85f162</value>
+                    <value>Facet-16eef472-b653-45ae-ad48-5e17e697aad4</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -828,13 +791,13 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>name</name>
-                    <value>accordionSection--8vrcnbiy01k</value>
+                    <value>accordionSection--k7fn841jv1b</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordionSection</componentName>
-                <identifier>flexipage_accordionSection5</identifier>
+                <identifier>flexipage_accordionSection6</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-898160bf-37e8-48a9-8483-cbdf4f033593</name>
+        <name>Facet-9e239ce2-e8f9-4779-8c9a-089511fe3483</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -842,13 +805,17 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>accordionSections</name>
-                    <value>Facet-898160bf-37e8-48a9-8483-cbdf4f033593</value>
+                    <value>Facet-9e239ce2-e8f9-4779-8c9a-089511fe3483</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>defaultSectionName</name>
+                    <value>accordionSection--4hwu7ralz6t</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:accordion</componentName>
-                <identifier>flexipage_accordion</identifier>
+                <identifier>flexipage_accordion2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-2d8bfa6f-981e-4777-b9ea-736c9f2779f7</name>
+        <name>Facet-fd4c3a1d-dd1f-4fd4-9318-1ee2669e19f3</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -1142,6 +1109,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-fd4c3a1d-dd1f-4fd4-9318-1ee2669e19f3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Compliance Checklist</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab9</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

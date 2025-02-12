@@ -2,19 +2,19 @@ public with sharing class aigMultipleChoicePLGenController {
 
     @AuraEnabled(cacheable=true)
     public static Map<String, Object> getResponseDetails(String recordId) {
-        // Fetch the related fields from aigov__aig_AI_Use_Case_Risk__c
-        String query = 'SELECT aigov__aig_AI_Compliance_Checklist_Question__c, aigov__aig_Compliance_Checklist_Question_Resp__c, aigov__aig_Risk__c, aigov__aig_Decision_Maker__r.aigov__aig_AI_Stakeholder__r.Name FROM aigov__aig_AI_Use_Case_Risk__c WHERE Id = :recordId';
-        aigov__aig_AI_Use_Case_Risk__c useCaseRisk = (aigov__aig_AI_Use_Case_Risk__c) Database.query(query);
+        // Fetch the related fields from aigov__aig_AI_Use_Case_Compliance_Question__c
+        String query = 'SELECT aigov__aig_AI_Compliance_Checklist_Question__c, aigov__aig_Question__c, aigov__aig_Response__c, aigov__aig_Decision_Maker__r.aigov__aig_AI_Stakeholder__r.Name FROM aigov__aig_AI_Use_Case_Compliance_Question__c WHERE Id = :recordId';
+        aigov__aig_AI_Use_Case_Compliance_Question__c useCaseQuest = (aigov__aig_AI_Use_Case_Compliance_Question__c) Database.query(query);
 
         Map<String, Object> result = new Map<String, Object>();
 
-        if (useCaseRisk != null) {
-            String complianceChecklistQuestionId = (String) useCaseRisk.aigov__aig_AI_Compliance_Checklist_Question__c;
-            String currentResponse = (String) useCaseRisk.aigov__aig_Compliance_Checklist_Question_Resp__c;
-            String riskValue = (String) useCaseRisk.aigov__aig_Risk__c;
+        if (useCaseQuest != null) {
+            String complianceChecklistQuestionId = (String) useCaseQuest.aigov__aig_AI_Compliance_Checklist_Question__c;
+            String currentResponse = (String) useCaseQuest.aigov__aig_Response__c;
+            String questionValue = (String) useCaseQuest.aigov__aig_Question__c;
             result.put('currentResponse', currentResponse); 
-            result.put('riskValue', riskValue); // Add risk value to result
-            result.put('stakeholder', useCaseRisk.aigov__aig_Decision_Maker__r.aigov__aig_AI_Stakeholder__r.Name);
+            result.put('questionValue', questionValue); // Add question text value to result
+            result.put('stakeholder', useCaseQuest.aigov__aig_Decision_Maker__r.aigov__aig_AI_Stakeholder__r.Name);
 
             if (complianceChecklistQuestionId != null) {
                 // Fetch the response type from the related question
@@ -47,26 +47,24 @@ public with sharing class aigMultipleChoicePLGenController {
     }
 
     @AuraEnabled
-    public static void updateRiskResponse(String recordId, String selectedChoiceId, String responseText, String description) {
-        // Fetch the use case risk record
-        aigov__aig_AI_Use_Case_Risk__c useCaseRisk = [SELECT Id, aigov__aig_Compliance_Checklist_Question_Resp__c, aigov__aig_Likelihood__c, aigov__aig_Impact__c FROM aigov__aig_AI_Use_Case_Risk__c WHERE Id = :recordId LIMIT 1];
+    public static void updateComplianceQuestionResponse(String recordId, String selectedChoiceId, String responseText, String description) {
+        // Fetch the use case compliance question record
+        aigov__aig_AI_Use_Case_Compliance_Question__c useCaseQuest = [SELECT Id, aigov__aig_Response__c, aigov__aig_Likelihood__c, aigov__aig_Impact__c FROM aigov__aig_AI_Use_Case_Compliance_Question__c WHERE Id = :recordId LIMIT 1];
         
         if (selectedChoiceId != null) {
             // Fetch the selected choice details
             aigov__aig_AI_Compliance_Checklist_Resp_Choice__c selectedChoice = [SELECT Name, aigov__aig_Likelihood__c, aigov__aig_Impact__c FROM aigov__aig_AI_Compliance_Checklist_Resp_Choice__c WHERE Id = :selectedChoiceId LIMIT 1];
             
-            // Update the fields on the use case risk record
-            useCaseRisk.aigov__aig_Compliance_Checklist_Question_Resp__c = selectedChoice.Name;
-            useCaseRisk.aigov__aig_Likelihood__c = selectedChoice.aigov__aig_Likelihood__c;
-            useCaseRisk.aigov__aig_Impact__c = selectedChoice.aigov__aig_Impact__c;
+            // Update the fields on the use case compliance question record
+            useCaseQuest.aigov__aig_Response__c = selectedChoice.Name;
+            useCaseQuest.aigov__aig_Likelihood__c = selectedChoice.aigov__aig_Likelihood__c;
+            useCaseQuest.aigov__aig_Impact__c = selectedChoice.aigov__aig_Impact__c;
         } else {
             // Update only the response text
-            useCaseRisk.aigov__aig_Compliance_Checklist_Question_Resp__c = responseText;
+            useCaseQuest.aigov__aig_Response__c = responseText;
             
         }
 
-        useCaseRisk.aigov__aig_Description__c = description;
-        
-        update useCaseRisk;
+        update useCaseQuest;
     }
 }

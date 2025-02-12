@@ -2,15 +2,15 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <assignments>
-        <name>Add_AI_Use_Case_Risk_to_Collection</name>
-        <label>Add AI Use Case Risk to Collection</label>
+        <name>Add_AI_Use_Case_Compliance_Checklist_Question_to_Collection</name>
+        <label>Add AI Use Case Compliance Checklist Question to Collection</label>
         <locationX>138</locationX>
         <locationY>890</locationY>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRiskstoUpdate</assignToReference>
+            <assignToReference>oAIUseCaseCCQuestiontoUpdates</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>oAIUseCaseRisktoUpdate</elementReference>
+                <elementReference>oAIUseCaseCCQuestiontoUpdate</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -23,21 +23,21 @@
         <locationX>138</locationX>
         <locationY>782</locationY>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisktoUpdate.aig_Decision_Maker__c</assignToReference>
+            <assignToReference>oAIUseCaseCCQuestiontoUpdate.aig_Decision_Maker__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>datatable_StakeholdersAvailable.firstSelectedRow.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>oAIUseCaseRisktoUpdate.Id</assignToReference>
+            <assignToReference>oAIUseCaseCCQuestiontoUpdate.Id</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>for_each_Selected_Question.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Add_AI_Use_Case_Risk_to_Collection</targetReference>
+            <targetReference>Add_AI_Use_Case_Compliance_Checklist_Question_to_Collection</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -53,7 +53,7 @@
             <name>Yes_Are_there_still_unassigned_compliance_questions</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>AI_Use_Case_Risks_from_Compliance_Checklist_with_no_Decision_Maker</leftValueReference>
+                <leftValueReference>AI_Use_Case_Compliance_Checklists_with_no_Decision_Maker</leftValueReference>
                 <operator>IsEmpty</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -90,6 +90,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
+    <description>ver 0.4 updates</description>
     <environments>Default</environments>
     <interviewLabel>AI Use Case Compliance Checklist Question Stakeholder Assignment {!$Flow.CurrentDateTime}</interviewLabel>
     <label>AI Use Case Compliance Checklist Question Stakeholder Assignment</label>
@@ -104,7 +105,7 @@
             <targetReference>Assign_Decision_Maker_Stakeholder</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_AI_Use_Case_Risks_w_Decision_Maker</targetReference>
+            <targetReference>Update_AI_Use_Case_Compliance_Checklist_Questions_w_Decision_Maker</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -127,8 +128,8 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
-        <name>AI_Use_Case_Risks_from_Compliance_Checklist_with_no_Decision_Maker</name>
-        <label>AI Use Case Risks from Compliance Checklist with no Decision Maker</label>
+        <name>AI_Use_Case_Compliance_Checklists_with_no_Decision_Maker</name>
+        <label>AI Use Case Compliance Checklists with no Decision Maker</label>
         <locationX>380</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -144,13 +145,6 @@
             </value>
         </filters>
         <filters>
-            <field>aig_From_Compliance_Checklist__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
             <field>aig_Decision_Maker__c</field>
             <operator>EqualTo</operator>
             <value>
@@ -158,7 +152,7 @@
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>aig_AI_Use_Case_Risk__c</object>
+        <object>aig_AI_Use_Case_Compliance_Question__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -183,15 +177,15 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_AI_Use_Case_Risks_w_Decision_Maker</name>
-        <label>Update AI Use Case Risks w/ Decision Maker</label>
+        <name>Update_AI_Use_Case_Compliance_Checklist_Questions_w_Decision_Maker</name>
+        <label>Update AI Use Case Compliance Checklist Questions w/ Decision Maker</label>
         <locationX>50</locationX>
         <locationY>1082</locationY>
         <connector>
             <isGoTo>true</isGoTo>
-            <targetReference>AI_Use_Case_Risks_from_Compliance_Checklist_with_no_Decision_Maker</targetReference>
+            <targetReference>AI_Use_Case_Compliance_Checklists_with_no_Decision_Maker</targetReference>
         </connector>
-        <inputReference>oAIUseCaseRiskstoUpdate</inputReference>
+        <inputReference>oAIUseCaseCCQuestiontoUpdates</inputReference>
     </recordUpdates>
     <screens>
         <name>All_Questions_Assigned</name>
@@ -251,7 +245,7 @@
                     <name>datatable_QuestionsUnassigned</name>
                     <dataTypeMappings>
                         <typeName>T</typeName>
-                        <typeValue>aig_AI_Use_Case_Risk__c</typeValue>
+                        <typeValue>aig_AI_Use_Case_Compliance_Question__c</typeValue>
                     </dataTypeMappings>
                     <extensionName>flowruntime:datatable</extensionName>
                     <fieldType>ComponentInstance</fieldType>
@@ -280,15 +274,15 @@
                         </value>
                     </inputParameters>
                     <inputParameters>
-                        <name>tableData</name>
+                        <name>columns</name>
                         <value>
-                            <elementReference>AI_Use_Case_Risks_from_Compliance_Checklist_with_no_Decision_Maker</elementReference>
+                            <stringValue>[{&quot;apiName&quot;:&quot;aigov__aig_Question__c&quot;,&quot;guid&quot;:&quot;column-e76a&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Question&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                         </value>
                     </inputParameters>
                     <inputParameters>
-                        <name>columns</name>
+                        <name>tableData</name>
                         <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;aigov__aig_Risk__c&quot;,&quot;guid&quot;:&quot;column-0fcb&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:true,&quot;customHeaderLabel&quot;:&quot;Question&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Risk&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                            <elementReference>AI_Use_Case_Compliance_Checklists_with_no_Decision_Maker</elementReference>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -378,25 +372,25 @@
         <locationX>254</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>AI_Use_Case_Risks_from_Compliance_Checklist_with_no_Decision_Maker</targetReference>
+            <targetReference>AI_Use_Case_Compliance_Checklists_with_no_Decision_Maker</targetReference>
         </connector>
     </start>
     <status>Active</status>
     <variables>
-        <name>oAIUseCaseRiskstoUpdate</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <objectType>aig_AI_Use_Case_Risk__c</objectType>
-    </variables>
-    <variables>
-        <name>oAIUseCaseRisktoUpdate</name>
+        <name>oAIUseCaseCCQuestiontoUpdate</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>aig_AI_Use_Case_Risk__c</objectType>
+        <objectType>aig_AI_Use_Case_Compliance_Question__c</objectType>
+    </variables>
+    <variables>
+        <name>oAIUseCaseCCQuestiontoUpdates</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>aig_AI_Use_Case_Compliance_Question__c</objectType>
     </variables>
     <variables>
         <name>recordId</name>

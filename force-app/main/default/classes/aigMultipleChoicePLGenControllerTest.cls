@@ -3,16 +3,16 @@ public class aigMultipleChoicePLGenControllerTest {
     
     @testSetup
     static void setupTestData() {
-        //Create test data for AI Risk Packet
+        //Create test data for AI Compliance Checklist
         aigov__aig_AI_Compliance_Checklist__c testComplianceChecklist = new aigov__aig_AI_Compliance_Checklist__c(
-            Name = 'Test Packet'
+            Name = 'Test Checklist'
         );
         insert testComplianceChecklist;
 
-        // Create test data for the AI Risk Packet Question
+        // Create test data for the AI Compliance Checklist Question
         aigov__aig_AI_Compliance_Checklist_Question__c testQuestion = new aigov__aig_AI_Compliance_Checklist_Question__c(
             aigov__aig_Response_Type__c = 'Multiple Choice',
-            aigov__aig_Question__c = 'Is this an acceptable risk?',
+            aigov__aig_Question__c = 'Has the risk assessment been completed?',
             aigov__aig_AI_Compliance_Checklist__c = testComplianceChecklist.Id
         );
         insert testQuestion;
@@ -37,30 +37,30 @@ public class aigMultipleChoicePLGenControllerTest {
         );
         insert testUseCase;
 
-        // Create test data for the AI Use Case Risk
-        aigov__aig_AI_Use_Case_Risk__c useCaseRisk = new aigov__aig_AI_Use_Case_Risk__c(
+        // Create test data for the AI Use Case Compliance Checklist Question
+        aigov__aig_AI_Use_Case_Compliance_Question__c useCaseQuest = new aigov__aig_AI_Use_Case_Compliance_Question__c(
             aigov__aig_AI_Compliance_Checklist_Question__c = testQuestion.Id,
-            aigov__aig_Compliance_Checklist_Question_Resp__c = 'Initial Response',
-            aigov__aig_Risk__c = 'High Risk',
+            aigov__aig_Response__c = 'Initial Response',
+            //aigov__aig_Risk__c = 'High Risk',
             aigov__aig_AI_Use_Case__c = testUseCase.Id
         );
-        insert useCaseRisk;
+        insert useCaseQuest;
     }
 
     @isTest
     static void testGetResponseDetails() {
-        // Fetch the use case risk record for the test
-        aigov__aig_AI_Use_Case_Risk__c useCaseRisk = [SELECT Id FROM aigov__aig_AI_Use_Case_Risk__c LIMIT 1];
+        // Fetch the use case Compliance Question record for the test
+        aigov__aig_AI_Use_Case_Compliance_Question__c useCaseQuest = [SELECT Id FROM aigov__aig_AI_Use_Case_Compliance_Question__c LIMIT 1];
 
         // Call the controller method
-        Map<String, Object> result = aigMultipleChoicePLGenController.getResponseDetails(useCaseRisk.Id);
+        Map<String, Object> result = aigMultipleChoicePLGenController.getResponseDetails(useCaseQuest.Id);
         
         // Verify the result contains expected keys and values
         System.assert(result.containsKey('currentResponse'));
         System.assertEquals('Initial Response', result.get('currentResponse'));
         
-        System.assert(result.containsKey('riskValue'));
-        System.assertEquals('High Risk', result.get('riskValue'));
+        System.assert(result.containsKey('questionValue'));
+        System.assertEquals('High Risk', result.get('questionValue'));
         
         System.assert(result.containsKey('responseType'));
         System.assertEquals('Multiple Choice', result.get('responseType'));
@@ -72,19 +72,19 @@ public class aigMultipleChoicePLGenControllerTest {
     }
 
     @isTest
-    static void testUpdateRiskResponse() {
-        // Fetch the use case risk record for the test
-        aigov__aig_AI_Use_Case_Risk__c useCaseRisk = [SELECT Id FROM aigov__aig_AI_Use_Case_Risk__c LIMIT 1];
+    static void testUpdateComplianceQuestionResponse() {
+        // Fetch the use case compliance question record for the test
+        aigov__aig_AI_Use_Case_Compliance_Question__c useCaseQuest = [SELECT Id FROM aigov__aig_AI_Use_Case_Compliance_Question__c LIMIT 1];
 
         // Fetch one of the multiple choice options
         aigov__aig_AI_Compliance_Checklist_Resp_Choice__c choice = [SELECT Id FROM aigov__aig_AI_Compliance_Checklist_Resp_Choice__c LIMIT 1];
 
-        // Call the updateRiskResponse method with the selected choice
-        aigMultipleChoicePLGenController.updateRiskResponse(useCaseRisk.Id, choice.Id, null, 'Updated Description');
+        // Call the updateComplianceQuestionResponse method with the selected choice
+        aigMultipleChoicePLGenController.updateComplianceQuestionResponse(useCaseQuest.Id, choice.Id, null, 'Updated Description');
 
-        // Verify that the use case risk record has been updated
-        aigov__aig_AI_Use_Case_Risk__c updatedUseCaseRisk = [SELECT aigov__aig_Compliance_Checklist_Question_Resp__c, aigov__aig_Description__c FROM aigov__aig_AI_Use_Case_Risk__c WHERE Id = :useCaseRisk.Id];
-        System.assertEquals('Choice 1', updatedUseCaseRisk.aigov__aig_Compliance_Checklist_Question_Resp__c);
-        System.assertEquals('Updated Description', updatedUseCaseRisk.aigov__aig_Description__c);
+        // Verify that the use case compliance question record has been updated
+        aigov__aig_AI_Use_Case_Compliance_Question__c updatedUseCaseQuest = [SELECT aigov__aig_Response__c FROM aigov__aig_AI_Use_Case_Compliance_Question__c WHERE Id = :useCaseQuest.Id];
+        System.assertEquals('Choice 1', updatedUseCaseQuest.aigov__aig_Response__c);
+        
     }
 }

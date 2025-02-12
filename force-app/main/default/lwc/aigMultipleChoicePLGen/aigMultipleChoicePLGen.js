@@ -1,6 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import getResponseDetails from '@salesforce/apex/aigMultipleChoicePLGenController.getResponseDetails';
-import updateRiskResponse from '@salesforce/apex/aigMultipleChoicePLGenController.updateRiskResponse';
+import updateComplianceQuestionResponse from '@salesforce/apex/aigMultipleChoicePLGenController.updateComplianceQuestionResponse';
 import { refreshApex } from '@salesforce/apex';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import AIG_AI_USE_CASE_RISK_MSG_CHANNEL from '@salesforce/messageChannel/aigAIUseCaseRiskMsgChannel__c'; 
@@ -17,7 +17,7 @@ export default class AigMultipleChoicePLGen extends LightningElement {
     
     options = [];
     value = '';
-    riskValue = ''; 
+    questionValue = ''; 
     stakeholder = '';
     selectedLabel = '';
     selectedImpact = '';
@@ -36,7 +36,7 @@ export default class AigMultipleChoicePLGen extends LightningElement {
         const { error, data } = result;
         if (data) {
             this.isMultipleChoice = data.responseType === 'Multiple Choice';
-            this.riskValue = data.riskValue;
+            this.questionValue = data.questionValue;
             this.stakeholder = data.stakeholder;
 
             if (this.isMultipleChoice) {
@@ -89,7 +89,7 @@ export default class AigMultipleChoicePLGen extends LightningElement {
     }
 
     saveResponse() {
-        updateRiskResponse({ 
+        updateComplianceQuestionResponse({ 
             recordId: this.recordId, 
             selectedChoiceId: this.isMultipleChoice ? this.value : null,
             responseText: this.isMultipleChoice ? null : this.value
